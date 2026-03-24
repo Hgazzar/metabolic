@@ -57,15 +57,15 @@ function Countdown() {
 
   return (
     <div className="mx-auto mt-12 w-full max-w-[700px] rounded-card border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-md md:px-8">
-      <div className="flex items-center justify-between gap-3 text-left md:gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-3 overflow-x-hidden px-1 sm:gap-x-2 md:gap-x-4">
         {items.map((item, index) => (
           <div
             key={item.label}
-            className="flex items-center gap-3 md:gap-4"
+            className="flex items-center gap-2 sm:gap-3 md:gap-4"
           >
             <TimeBlock label={item.label} value={item.value} />
             {index !== items.length - 1 && (
-              <span className="mb-5 font-heading text-3xl font-semibold text-white">
+              <span className="mb-5 select-none font-heading text-3xl font-semibold text-white">
                 :
               </span>
             )}
