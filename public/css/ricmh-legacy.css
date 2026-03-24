@@ -1,8 +1,14 @@
 /* RICMH legacy landing — مفصول عن HTML */
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background: #000000;
+  overflow-x: clip;
 }
+
 
 /* صفحة اللجنة — مطابقة للمواصفات (Poppins) */
 .committee-name {
@@ -815,4 +821,64 @@ body {
 .partners-form-submit:focus-visible {
   outline: 2px solid #2d5016;
   outline-offset: 2px;
+}
+
+/* ——— جوال 375px–425px: بطاقات المتحدثين، لجنة، هوامش ——— */
+@media (max-width: 767px) {
+  .speaker-card .image-wrapper {
+    height: 260px;
+    padding: 10px 12px 0 0;
+  }
+
+  .speaker-card__body {
+    padding: 1.25rem 1rem 2.75rem;
+  }
+
+  .speaker-card__name {
+    font-size: 1.0625rem;
+  }
+
+  .speaker-card__desc {
+    font-size: 0.8125rem;
+  }
+
+  .committee-card-v2__name {
+    font-size: 1rem;
+  }
+
+  .committee-card-v2__bio {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  .scientific-committee-section,
+  .speakers-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .partners-page-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .partners-form-panel {
+    padding: 1.25rem !important;
+  }
+
+  .partners-info-section {
+    padding-top: 2.25rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .partners-info-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  .partners-info-copy {
+    font-size: 0.9375rem;
+  }
 }

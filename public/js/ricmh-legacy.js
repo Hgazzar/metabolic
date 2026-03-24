@@ -256,4 +256,62 @@
   }
 
   initScrollReveal()
+
+  /** قائمة تنقل الجوال (همبرغر) */
+  function initLegacyNav() {
+    const drawer = document.getElementById("legacy-nav-drawer")
+    const toggles = document.querySelectorAll(".legacy-nav-toggle")
+    if (!drawer || !toggles.length) return
+
+    const mq = window.matchMedia("(min-width: 1024px)")
+
+    function setIcons(isOpen) {
+      toggles.forEach((btn) => {
+        const openIcon = btn.querySelector(".legacy-nav-icon-open")
+        const closeIcon = btn.querySelector(".legacy-nav-icon-close")
+        if (openIcon && closeIcon) {
+          openIcon.classList.toggle("hidden", isOpen)
+          closeIcon.classList.toggle("hidden", !isOpen)
+        }
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false")
+      })
+    }
+
+    function closeDrawer() {
+      if (mq.matches) return
+      drawer.classList.add("hidden")
+      setIcons(false)
+    }
+
+    function openDrawer() {
+      if (mq.matches) return
+      drawer.classList.remove("hidden")
+      setIcons(true)
+    }
+
+    toggles.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (drawer.classList.contains("hidden")) openDrawer()
+        else closeDrawer()
+      })
+    })
+
+    drawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!mq.matches) closeDrawer()
+      })
+    })
+
+    mq.addEventListener("change", () => {
+      if (mq.matches) {
+        drawer.classList.remove("hidden")
+        setIcons(false)
+      } else {
+        drawer.classList.add("hidden")
+        setIcons(false)
+      }
+    })
+  }
+
+  initLegacyNav()
 })()

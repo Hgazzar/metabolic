@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RICMH 2026 — Agenda</title>
-    <link rel="icon" type="image/png" href="./assets/logo-tab.png" />
+    <link rel="icon" type="image/png" href="./assets/logo-tab.png" sizes="32x32" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/tailwind-config-legacy.js"></script>
@@ -27,38 +27,66 @@
       ></div>
       <div class="pointer-events-none absolute inset-0 z-0 bg-black/60"></div>
 
-      <header class="scroll-reveal relative z-50 px-4 md:px-8">
+      <header class="scroll-reveal relative z-50 px-3 sm:px-4 md:px-8">
         <nav
           dir="ltr"
-          class="slide-down mx-auto mt-6 flex w-full max-w-7xl items-center justify-between rounded-2xl bg-white px-6 py-5 shadow-lg md:px-8"
+          class="legacy-site-nav slide-down mx-auto mt-4 flex w-full max-w-7xl flex-col rounded-2xl bg-white px-4 py-4 shadow-lg sm:mt-6 sm:px-6 sm:py-5 md:px-8 lg:flex-row lg:items-center lg:justify-between"
         >
-          <div class="flex min-w-[298px] items-center gap-3">
-            <a href="./ricmh-legacy-full.html" class="shrink-0" aria-label="RICMH — الصفحة الرئيسية">
-              <img src="./assets/logo.png" alt="RICMH Logo" class="h-16 w-auto object-contain" />
-            </a>
+          <div class="flex w-full items-center justify-between gap-3 lg:w-auto lg:max-w-none">
+            <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+              <a href="./ricmh-legacy-full.html" class="shrink-0" aria-label="RICMH — الصفحة الرئيسية">
+                <img
+                  src="./assets/logo.png"
+                  alt="RICMH Logo"
+                  class="h-11 w-auto max-w-[min(100%,200px)] object-contain sm:h-14 md:h-16"
+                  width="200"
+                  height="64"
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
+            </div>
+            <button
+              type="button"
+              class="legacy-nav-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 bg-white text-[#2a2a2a] shadow-sm transition hover:bg-neutral-50 lg:hidden"
+              aria-expanded="false"
+              aria-controls="legacy-nav-drawer"
+              aria-label="Open menu"
+            >
+              <svg class="legacy-nav-icon-open h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg class="legacy-nav-icon-close hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
 
-          <ul class="hidden items-center gap-8 font-heading text-[14px] font-medium text-[#2a2a2a] lg:flex">
-            <li><a href="./ricmh-legacy-full.html" class="transition hover:opacity-70">Home</a></li>
-            <li><a href="./agenda.html" class="text-[#7AC843]">Agenda</a></li>
-            <li><a href="./committee.html" class="transition hover:opacity-70">Committee</a></li>
-            <li><a href="./committee.html#speakers" class="transition hover:opacity-70">Speakers</a></li>
-            <li><a href="./partners.html" class="transition hover:opacity-70">Partners</a></li>
-          </ul>
-
-          <div class="flex min-w-[335px] items-center justify-end gap-3 font-heading">
-            <a
-              href="#"
-              class="rounded-full border border-[#7AC843] bg-white px-7 py-2 text-[14px] font-medium text-[#7AC843] transition hover:opacity-80"
-            >
-              Booklet download
-            </a>
-            <a
-              href="#"
-              class="rounded-full bg-[#7AC843] px-7 py-2 text-[14px] font-medium text-white transition hover:opacity-85"
-            >
-              Registration
-            </a>
+          <div
+            id="legacy-nav-drawer"
+            class="flex hidden w-full flex-col gap-4 border-t border-neutral-100 pt-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:border-0 lg:pt-0"
+          >
+            <ul class="flex flex-col gap-3 font-heading text-[13px] font-medium text-[#2a2a2a] sm:text-[14px] lg:flex-row lg:items-center lg:gap-8">
+              <li><a href="./ricmh-legacy-full.html" class="block py-1 transition hover:opacity-70">Home</a></li>
+              <li><a href="./agenda.html" class="block py-1 text-[#7AC843]">Agenda</a></li>
+              <li><a href="./committee.html" class="block py-1 transition hover:opacity-70">Committee</a></li>
+              <li><a href="./committee.html#speakers" class="block py-1 transition hover:opacity-70">Speakers</a></li>
+              <li><a href="./partners.html" class="block py-1 transition hover:opacity-70">Partners</a></li>
+            </ul>
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <a
+                href="#"
+                class="inline-flex justify-center rounded-full border border-[#7AC843] bg-white px-5 py-2 text-center text-[13px] font-medium text-[#7AC843] transition hover:opacity-80 sm:px-6 sm:text-[14px]"
+              >
+                Booklet download
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center rounded-full bg-[#7AC843] px-5 py-2 text-center text-[13px] font-medium text-white transition hover:opacity-85 sm:px-6 sm:text-[14px]"
+              >
+                Registration
+              </a>
+            </div>
           </div>
         </nav>
       </header>

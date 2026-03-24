@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RICMH 2026 - Landing Page</title>
-    <link rel="icon" type="image/png" href="./assets/logo-tab.png" />
+    <link rel="icon" type="image/png" href="./assets/logo-tab.png" sizes="32x32" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/tailwind-config-legacy.js"></script>
@@ -27,77 +27,110 @@
       ></div>
       <div class="pointer-events-none absolute inset-0 z-0 bg-black/60"></div>
 
-      <header class="scroll-reveal relative z-50 px-4 md:px-8">
+      <header class="scroll-reveal relative z-50 px-3 sm:px-4 md:px-8">
         <nav
           dir="ltr"
-          class="slide-down mx-auto mt-6 flex w-full max-w-7xl items-center justify-between rounded-2xl bg-white px-6 py-5 shadow-lg md:px-8"
+          class="legacy-site-nav slide-down mx-auto mt-4 flex w-full max-w-7xl flex-col rounded-2xl bg-white px-4 py-4 shadow-lg sm:mt-6 sm:px-6 sm:py-5 md:px-8 lg:flex-row lg:items-center lg:justify-between"
         >
-          <div class="flex min-w-[298px] items-center gap-3">
-            <a href="./ricmh-legacy-full.html" class="shrink-0" aria-label="RICMH — الصفحة الرئيسية">
-              <img src="./assets/logo.png" alt="RICMH Logo" class="h-16 w-auto object-contain" />
-            </a>
+          <div class="flex w-full items-center justify-between gap-3 lg:w-auto lg:max-w-none">
+            <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+              <a href="./ricmh-legacy-full.html" class="shrink-0" aria-label="RICMH — الصفحة الرئيسية">
+                <img
+                  src="./assets/logo.png"
+                  alt="RICMH Logo"
+                  class="h-11 w-auto max-w-[min(100%,200px)] object-contain sm:h-14 md:h-16"
+                  width="200"
+                  height="64"
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
+            </div>
+            <button
+              type="button"
+              class="legacy-nav-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 bg-white text-[#2a2a2a] shadow-sm transition hover:bg-neutral-50 lg:hidden"
+              aria-expanded="false"
+              aria-controls="legacy-nav-drawer"
+              aria-label="Open menu"
+            >
+              <svg class="legacy-nav-icon-open h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg class="legacy-nav-icon-close hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
 
-          <ul class="hidden items-center gap-8 font-heading text-[14px] font-medium text-[#2a2a2a] lg:flex">
-            <li><a href="./ricmh-legacy-full.html" class="text-[#7AC843]">Home</a></li>
-            <li><a href="./agenda.html" class="transition hover:opacity-70">Agenda</a></li>
-            <li><a href="./committee.html" class="transition hover:opacity-70">Committee</a></li>
-            <li><a href="./committee.html#speakers" class="transition hover:opacity-70">Speakers</a></li>
-            <li><a href="./partners.html" class="transition hover:opacity-70">Partners</a></li>
-          </ul>
-
-          <div class="flex min-w-[335px] items-center justify-end gap-3 font-heading">
-            <a
-              href="#"
-              class="rounded-full border border-[#7AC843] bg-white px-7 py-2 text-[14px] font-medium text-[#7AC843] transition hover:opacity-80"
-            >
-              Booklet download
-            </a>
-            <a
-              href="#"
-              class="rounded-full bg-[#7AC843] px-7 py-2 text-[14px] font-medium text-white transition hover:opacity-85"
-            >
-              Registration
-            </a>
+          <div
+            id="legacy-nav-drawer"
+            class="flex hidden w-full flex-col gap-4 border-t border-neutral-100 pt-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:border-0 lg:pt-0"
+          >
+            <ul class="flex flex-col gap-3 font-heading text-[13px] font-medium text-[#2a2a2a] sm:text-[14px] lg:flex-row lg:items-center lg:gap-8">
+              <li><a href="./ricmh-legacy-full.html" class="block py-1 text-[#7AC843]">Home</a></li>
+              <li><a href="./agenda.html" class="block py-1 transition hover:opacity-70">Agenda</a></li>
+              <li><a href="./committee.html" class="block py-1 transition hover:opacity-70">Committee</a></li>
+              <li><a href="./committee.html#speakers" class="block py-1 transition hover:opacity-70">Speakers</a></li>
+              <li><a href="./partners.html" class="block py-1 transition hover:opacity-70">Partners</a></li>
+            </ul>
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <a
+                href="#"
+                class="inline-flex justify-center rounded-full border border-[#7AC843] bg-white px-5 py-2 text-center text-[13px] font-medium text-[#7AC843] transition hover:opacity-80 sm:px-6 sm:text-[14px]"
+              >
+                Booklet download
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center rounded-full bg-[#7AC843] px-5 py-2 text-center text-[13px] font-medium text-white transition hover:opacity-85 sm:px-6 sm:text-[14px]"
+              >
+                Registration
+              </a>
+            </div>
           </div>
         </nav>
       </header>
 
       <main class="relative z-20 mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-7xl flex-col items-center justify-end px-4 pb-0 pt-10 text-center md:px-8">
-        <div class="glow-pulse pointer-events-none absolute left-1/2 top-[47%] z-10 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(122,200,67,0.52)_0%,rgba(122,200,67,0.36)_20%,rgba(122,200,67,0.2)_38%,rgba(122,200,67,0.08)_54%,rgba(122,200,67,0)_76%)]"></div>
+        <div
+          class="glow-pulse pointer-events-none absolute left-1/2 top-[47%] z-10 h-[min(520px,90vw)] w-[min(900px,100vw)] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(122,200,67,0.52)_0%,rgba(122,200,67,0.36)_20%,rgba(122,200,67,0.2)_38%,rgba(122,200,67,0.08)_54%,rgba(122,200,67,0)_76%)]"
+        ></div>
 
         <section class="scroll-reveal relative z-20 flex w-full max-w-[980px] flex-col items-center">
           <h1 dir="ltr" class="fade-up mt-2 font-heading leading-none">
             <span
-              class="inline-block font-heading text-[148.91px] font-bold leading-none tracking-[0] text-[#7EC147]"
+              class="inline-block font-heading text-[clamp(3rem,15vw,9.5rem)] font-bold leading-none tracking-[0] text-[#7EC147]"
               >RICMH</span><span
-              class="font-heading text-[148.91px] font-medium leading-none tracking-[0] text-white"
+              class="font-heading text-[clamp(3rem,15vw,9.5rem)] font-medium leading-none tracking-[0] text-white"
               >2026</span>
           </h1>
           <p
-            class="fade-up-delay-1 mt-0 inline-block max-w-[min(100%,839px)] font-heading text-[39.94px] font-bold leading-tight tracking-[0] text-white md:leading-[100%]"
+            class="fade-up-delay-1 mt-0 inline-block max-w-[min(100%,839px)] px-2 font-heading text-[clamp(1.5rem,5vw,2.5rem)] font-bold leading-tight tracking-[0] text-white md:leading-[100%]"
           >
             Shaping the Future of Metabolic wellness
           </p>
-          <p dir="ltr" class="fade-up-delay-2 mt-4 font-heading text-4xl font-normal text-white md:text-[42px]">
-            <span class="inline-block h-[65px] w-[106px] font-heading text-[43.23px] font-bold leading-[100%] tracking-[0] text-white">April</span>
-            <span class="inline-block h-[59px] w-[197px] font-heading text-[39px] font-normal leading-[100%] tracking-[0] text-white"> 3–4, 2026</span>
+          <p dir="ltr" class="fade-up-delay-2 mt-4 font-heading text-3xl font-normal text-white sm:text-4xl md:text-[42px]">
+            <span class="inline-block font-heading text-[clamp(1.75rem,6vw,2.75rem)] font-bold leading-[100%] tracking-[0] text-white">April</span>
+            <span class="inline-block font-heading text-[clamp(1.5rem,5vw,2.5rem)] font-normal leading-[100%] tracking-[0] text-white"> 3–4, 2026</span>
           </p>
 
-          <div dir="ltr" class="fade-up-delay-3 mt-7 flex h-[60px] w-[456px] items-center justify-center gap-4">
+          <div
+            dir="ltr"
+            class="fade-up-delay-3 mt-7 flex w-full max-w-[456px] flex-wrap items-center justify-center gap-3 px-2 sm:h-[60px] sm:flex-nowrap sm:gap-4"
+          >
             <a
               href="#"
-              class="flex h-[60px] w-[213px] min-w-[105.77px] max-w-[604.37px] items-center justify-center gap-[7px] rounded-[10.07px] bg-white p-[1px] font-heading text-[#7AC843] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)]"
+              class="flex min-h-[52px] w-full min-w-0 max-w-[213px] flex-1 items-center justify-center gap-[7px] rounded-[10.07px] bg-white p-[1px] font-heading text-[#7AC843] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)] sm:h-[60px] sm:flex-initial sm:w-[213px]"
             >
-              <span class="inline-block h-[31px] w-[141px] text-center font-heading text-[20.15px] font-normal leading-[30.22px] tracking-[0]">
+              <span class="inline-block px-2 text-center font-heading text-[clamp(1rem,3.5vw,1.25rem)] font-normal leading-snug tracking-[0]">
                 View Program
               </span>
             </a>
             <a
               href="#"
-              class="flex h-[60px] w-[213px] min-w-[105.77px] max-w-[604.37px] items-center justify-center gap-[7px] rounded-[10.07px] bg-[#7AC843] p-[1px] font-heading text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)]"
+              class="flex min-h-[52px] w-full min-w-0 max-w-[213px] flex-1 items-center justify-center gap-[7px] rounded-[10.07px] bg-[#7AC843] p-[1px] font-heading text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)] sm:h-[60px] sm:flex-initial sm:w-[213px]"
             >
-              <span class="inline-flex h-[31px] w-[131px] items-center justify-center gap-1 whitespace-nowrap text-center font-heading text-[20.15px] font-normal leading-[30.22px] tracking-[0]">
+              <span class="inline-flex items-center justify-center gap-1 whitespace-nowrap px-2 text-center font-heading text-[clamp(1rem,3.5vw,1.25rem)] font-normal leading-snug tracking-[0]">
                 <span>Register Now</span>
                 <span class="text-white">→</span>
               </span>
