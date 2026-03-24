@@ -5,8 +5,8 @@ function applyWhatsAppFixedStyles(el) {
   if (!el) return
   el.style.setProperty("position", "fixed", "important")
   el.style.setProperty("bottom", "24px", "important")
-  el.style.setProperty("left", "50%", "important")
-  el.style.setProperty("transform", "translateX(-50%)", "important")
+  el.style.setProperty("left", "32px", "important")
+  el.style.setProperty("transform", "none", "important")
   el.style.setProperty("z-index", "9999", "important")
   el.style.setProperty("display", "flex", "important")
 }
