@@ -6,7 +6,7 @@ function FloatingDock() {
         target="_blank"
         rel="noopener noreferrer"
         dir="ltr"
-        className="fixed bottom-6 left-1/2 z-[1000] flex w-max min-w-0 max-w-[min(80%,280px)] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90 md:bottom-8"
+        className="fixed bottom-6 left-1/2 z-[1000] flex -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
       >
         <svg
           className="h-5 w-5 shrink-0"

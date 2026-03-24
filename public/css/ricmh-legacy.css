@@ -416,6 +416,24 @@ body {
   font-weight: 700;
 }
 
+/* العد التنازلي — بدون حدود أو خطوط من pseudo-elements */
+.legacy-countdown-grid,
+.legacy-countdown-grid * {
+  border-style: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  --tw-ring-width: 0 !important;
+  --tw-ring-offset-width: 0 !important;
+}
+
+.legacy-countdown-grid *::before,
+.legacy-countdown-grid *::after {
+  content: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* دخول لطيف لكل الأقسام عند التمرير (يُفعّل بـ .is-visible من JS) */
 .scroll-reveal {
   opacity: 0;

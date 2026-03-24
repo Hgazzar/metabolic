@@ -91,12 +91,12 @@
         </nav>
       </header>
 
-      <main class="relative z-20 mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-7xl flex-col items-center justify-end px-4 pb-0 pt-10 text-center md:px-8">
+      <main class="relative z-20 mx-auto mb-0 flex min-h-[calc(100vh-88px)] w-full max-w-7xl flex-col items-center justify-end px-4 pb-0 pt-10 text-center md:px-8">
         <div
           class="glow-pulse pointer-events-none absolute left-1/2 top-[47%] z-10 h-[min(520px,90vw)] w-[min(900px,100vw)] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(122,200,67,0.52)_0%,rgba(122,200,67,0.36)_20%,rgba(122,200,67,0.2)_38%,rgba(122,200,67,0.08)_54%,rgba(122,200,67,0)_76%)]"
         ></div>
 
-        <section class="scroll-reveal relative z-20 flex w-full max-w-[980px] flex-col items-center">
+        <section class="scroll-reveal relative z-20 mb-0 flex w-full max-w-[980px] flex-col items-center">
           <h1 dir="ltr" class="fade-up mt-2 max-w-full px-1 font-heading leading-none">
             <span
               class="inline-block font-heading text-3xl font-bold leading-none tracking-[0] text-[#7EC147] sm:text-5xl md:text-7xl lg:text-8xl xl:text-[clamp(5rem,12vw,9.5rem)]"
@@ -151,17 +151,15 @@
           </article>
         </section>
       </main>
-    </div>
 
     <section
-        class="scroll-reveal relative z-30 flex min-h-[212px] items-center justify-center overflow-hidden py-8"
-        style="width: 100%; max-width: 100vw; background: linear-gradient(87.4deg, #7AC843 -18.58%, #000000 140.14%, #000000 141.03%);"
+        class="relative z-30 mt-0 flex min-h-0 w-full max-w-none flex-col items-center justify-center overflow-hidden border-0 pb-8 pt-0 outline-none ring-0"
+        style="max-width: 100vw; background: linear-gradient(87.4deg, #7AC843 -18.58%, #000000 140.14%, #000000 141.03%);"
       >
         <div class="absolute inset-0 bg-black/18"></div>
-        <!-- Grid (no flex-wrap) يمنع خطاً شبحياً بجانب الثواني من التفاف الصف أو شريط التمرير -->
         <div
           dir="ltr"
-          class="relative z-10 mx-auto grid w-full max-w-[min(100%,680px)] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-x-0 px-2 sm:gap-x-1 md:px-4"
+          class="legacy-countdown-grid relative z-10 mx-auto grid w-full max-w-[min(100%,680px)] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-x-0 border-none px-2 py-6 shadow-none outline-none ring-0 sm:gap-x-1 md:px-4"
         >
           <div class="flex min-w-0 flex-col items-center gap-2">
             <span
@@ -213,6 +211,7 @@
           </div>
         </div>
       </section>
+    </div>
 
     <section id="chairman-message" class="relative w-full min-h-0 overflow-hidden bg-white py-16 md:min-h-[700px] md:py-24">
         <div
@@ -902,7 +901,7 @@
     <a
       href="#"
       dir="ltr"
-      class="fixed bottom-6 left-1/2 z-[1000] flex w-max min-w-0 max-w-[min(80%,280px)] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90 md:bottom-8"
+      class="fixed bottom-6 left-1/2 z-[1000] flex -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
     >
       <svg
         class="h-5 w-5 shrink-0"
