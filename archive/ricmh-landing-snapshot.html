@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RICMH 2026 - Landing Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              body: ['"Century Gothic"', "Poppins", "sans-serif"],
+            },
+          },
+        },
+      }
+    </script>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        background: #000000;
+      }
+
+      .slide-down {
+        animation: slideDown 0.7s ease-out both;
+      }
+
+      .fade-up {
+        animation: fadeInUp 0.9s ease-out both;
+      }
+
+      .fade-up-delay-1 {
+        animation: fadeInUp 0.9s ease-out 0.2s both;
+      }
+
+      .fade-up-delay-2 {
+        animation: fadeInUp 0.9s ease-out 0.35s both;
+      }
+
+      .fade-up-delay-3 {
+        animation: fadeInUp 0.9s ease-out 0.5s both;
+      }
+
+      .glow-pulse {
+        animation: glowPulse 2.8s ease-in-out infinite;
+      }
+
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-22px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes glowPulse {
+        0%,
+        100% {
+          opacity: 0.35;
+          transform: scale(0.98);
+        }
+        50% {
+          opacity: 0.56;
+          transform: scale(1.02);
+        }
+      }
+
+      /* Speakers carousel: scale from geometric center (premium stacked look) */
+      #speakers-track .speaker-slide {
+        transform-origin: center center;
+        backface-visibility: hidden;
+      }
+
+      /* Reach us: background-footer.png — مثبتة من الأسفل والمنتصف أفقياً */
+      #reach-us .reach-us-lines::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: url("./assets/background-footer.png");
+        background-size: 100% auto;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        opacity: 1;
+        mix-blend-mode: normal;
+      }
+
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-black text-white">
+    <div id="top" class="relative min-h-screen overflow-hidden bg-[#000000]">
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
+        style="background-image: url('./assets/hero-bg.jpg')"
+      ></div>
+      <div class="pointer-events-none absolute inset-0 z-0 bg-black/60"></div>
+
+      <header class="relative z-50 px-4 md:px-8">
+        <nav
+          dir="ltr"
+          class="slide-down mx-auto mt-6 flex w-full max-w-7xl items-center justify-between rounded-2xl bg-white px-6 py-5 shadow-lg md:px-8"
+        >
+          <div class="flex min-w-[298px] items-center gap-3">
+            <img src="./assets/logo.png" alt="RICMH Logo" class="h-16 w-auto object-contain" />
+          </div>
+
+          <ul class="hidden items-center gap-8 font-heading text-[14px] font-medium text-[#2a2a2a] lg:flex">
+            <li><a href="#" class="text-[#7AC843]">Home</a></li>
+            <li><a href="#" class="transition hover:opacity-70">Agenda</a></li>
+            <li><a href="#" class="transition hover:opacity-70">Committee</a></li>
+            <li><a href="#" class="transition hover:opacity-70">Speakers</a></li>
+            <li><a href="#" class="transition hover:opacity-70">Partners</a></li>
+          </ul>
+
+          <div class="flex min-w-[335px] items-center justify-end gap-3 font-heading">
+            <a
+              href="#"
+              class="rounded-full border border-[#7AC843] bg-white px-7 py-2 text-[14px] font-medium text-[#7AC843] transition hover:opacity-80"
+            >
+              Booklet download
+            </a>
+            <a
+              href="#"
+              class="rounded-full bg-[#7AC843] px-7 py-2 text-[14px] font-medium text-white transition hover:opacity-85"
+            >
+              Registration
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="relative z-20 mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-7xl flex-col items-center justify-end px-4 pb-0 pt-10 text-center md:px-8">
+        <div class="glow-pulse pointer-events-none absolute left-1/2 top-[47%] z-10 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(122,200,67,0.52)_0%,rgba(122,200,67,0.36)_20%,rgba(122,200,67,0.2)_38%,rgba(122,200,67,0.08)_54%,rgba(122,200,67,0)_76%)]"></div>
+
+        <section class="relative z-20 flex w-full max-w-[980px] flex-col items-center">
+          <h1 dir="ltr" class="fade-up mt-2 font-heading leading-none">
+            <span
+              class="inline-block font-heading text-[148.91px] font-bold leading-none tracking-[0] text-[#7EC147]"
+              >RICMH</span><span
+              class="font-heading text-[148.91px] font-medium leading-none tracking-[0] text-white"
+              >2026</span>
+          </h1>
+          <p
+            class="fade-up-delay-1 mt-0 inline-block max-w-[min(100%,839px)] font-heading text-[39.94px] font-bold leading-tight tracking-[0] text-white md:leading-[100%]"
+          >
+            Shaping the Future of Metabolic wellness
+          </p>
+          <p dir="ltr" class="fade-up-delay-2 mt-4 font-heading text-4xl font-normal text-white md:text-[42px]">
+            <span class="inline-block h-[65px] w-[106px] font-heading text-[43.23px] font-bold leading-[100%] tracking-[0] text-white">April</span>
+            <span class="inline-block h-[59px] w-[197px] font-heading text-[39px] font-normal leading-[100%] tracking-[0] text-white"> 3–4, 2026</span>
+          </p>
+
+          <div dir="ltr" class="fade-up-delay-3 mt-7 flex h-[60px] w-[456px] items-center justify-center gap-4">
+            <a
+              href="#"
+              class="flex h-[60px] w-[213px] min-w-[105.77px] max-w-[604.37px] items-center justify-center gap-[7px] rounded-[10.07px] bg-white p-[1px] font-heading text-[#7AC843] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)]"
+            >
+              <span class="inline-block h-[31px] w-[141px] text-center font-heading text-[20.15px] font-normal leading-[30.22px] tracking-[0]">
+                View Program
+              </span>
+            </a>
+            <a
+              href="#"
+              class="flex h-[60px] w-[213px] min-w-[105.77px] max-w-[604.37px] items-center justify-center gap-[7px] rounded-[10.07px] bg-[#7AC843] p-[1px] font-heading text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(122,200,67,0.5)]"
+            >
+              <span class="inline-flex h-[31px] w-[131px] items-center justify-center gap-1 whitespace-nowrap text-center font-heading text-[20.15px] font-normal leading-[30.22px] tracking-[0]">
+                <span>Register Now</span>
+                <span class="text-white">→</span>
+              </span>
+            </a>
+          </div>
+
+          <article class="fade-up-delay-3 mt-14 h-[194px] w-[359px] rounded-t-3xl rounded-b-none bg-[#1F2A18] px-8 py-7">
+            <div class="flex h-full items-center justify-between">
+              <div class="flex -translate-x-3 flex-col items-center">
+                <p class="h-[65px] w-[53px] text-center font-heading text-[43px] font-bold leading-[100%] tracking-[0] text-white">20</p>
+                <p class="mt-2 h-[27px] w-[76px] font-heading text-[18px] font-normal leading-[100%] tracking-[0] text-[#8fd95f]">Lectures</p>
+              </div>
+              <div class="flex translate-x-3 flex-col items-center">
+                <p class="h-[65px] w-[53px] text-center font-heading text-[43px] font-bold leading-[100%] tracking-[0] text-white">20</p>
+                <p class="mt-2 h-[27px] w-[83px] font-heading text-[18px] font-normal leading-[100%] tracking-[0] text-[#8fd95f]">Speakers</p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <section
+        class="relative z-30 flex min-h-[212px] items-center justify-center overflow-hidden py-8"
+        style="width: 100%; max-width: 100vw; background: linear-gradient(87.4deg, #7AC843 -18.58%, #000000 140.14%, #000000 141.03%);"
+      >
+        <div class="absolute inset-0 bg-black/18"></div>
+        <div dir="ltr" class="relative z-10 flex flex-row flex-nowrap items-start justify-center gap-x-1 overflow-x-auto px-4 sm:gap-x-2 md:gap-x-4">
+          <div class="flex min-w-[3.25rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+            <span
+              id="count-days"
+              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              >00</span>
+            <span
+              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              >Days</span>
+          </div>
+          <div
+            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center self-start px-0.5 sm:px-1"
+            aria-hidden="true"
+          >
+            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white"
+              >:</span>
+          </div>
+          <div class="flex min-w-[3.25rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+            <span
+              id="count-hours"
+              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              >00</span>
+            <span
+              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              >Hours</span>
+          </div>
+          <div
+            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center self-start px-0.5 sm:px-1"
+            aria-hidden="true"
+          >
+            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white"
+              >:</span>
+          </div>
+          <div class="flex min-w-[3.25rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+            <span
+              id="count-minutes"
+              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              >00</span>
+            <span
+              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              >Minutes</span>
+          </div>
+          <div
+            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center self-start px-0.5 sm:px-1"
+            aria-hidden="true"
+          >
+            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white"
+              >:</span>
+          </div>
+          <div class="flex min-w-[3.25rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+            <span
+              id="count-seconds"
+              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              >00</span>
+            <span
+              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              >Seconds</span>
+          </div>
+        </div>
+      </section>
+
+    <section id="chairman-message" class="relative w-full min-h-[700px] overflow-hidden bg-white py-20 md:py-24">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full overflow-hidden bg-left bg-no-repeat"
+          style="background-image: url('./assets/background-lines.png'); background-size: 92% 100%; background-position: left bottom; bottom: 50px;"
+        ></div>
+
+        <div class="relative z-10 mx-auto w-full px-6 py-6 md:px-12 md:py-10">
+          <div dir="ltr" class="relative z-20 mx-auto flex w-[82%] max-w-[1547px] flex-col overflow-visible rounded-bl-[233px] border border-[#7AC843]/30 bg-white md:flex-row md:items-end" style="border-width: 1.5px;">
+            <img src="./assets/comma.png" alt="" class="absolute -top-5 left-[30%] z-30 h-12 w-12 object-contain md:h-14 md:w-14" aria-hidden="true" />
+            <img src="./assets/comma.png" alt="" class="absolute -bottom-5 right-8 z-30 h-12 w-12 object-contain md:right-10 md:h-14 md:w-14" aria-hidden="true" style="transform: rotate(180deg);" />
+            <div class="flex shrink-0 items-end overflow-hidden md:h-full md:w-[35.5%]">
+              <img
+                src="./assets/doctor.png"
+                alt="Abdullah Alquiahis - Chairman RICMH 2026"
+                class="block h-[340px] w-full object-contain object-bottom object-left sm:h-[420px] md:h-full md:w-[560px]"
+                style="position: relative; left: 0; bottom: 0px; opacity: 1;"
+              />
+            </div>
+            <div class="relative flex flex-1 flex-col justify-start px-7 py-10 md:px-10 md:py-14 lg:px-12">
+              <h2 class="font-heading text-xl font-semibold text-[#7AC843] md:text-2xl">Chairman's Welcome Message</h2>
+              <p class="mt-3 font-heading text-base font-bold text-gray-900 md:text-[28px]">Dear Guests and Colleagues,</p>
+              <div class="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-gray-800 md:text-base">
+                <p>It is with great pleasure that we welcome you to the 1st Riyadh International Congress on Metabolic Health 2026. This congress represents a pivotal platform for advancing knowledge and collaboration in metabolic wellness.</p>
+                <p>Our program is designed to align with Saudi Vision 2030's goals for a healthier society, bringing together leading experts to share the latest research and clinical practices.</p>
+                <p>We thank you for your participation and look forward to a productive and inspiring event.</p>
+                <p>Thank you to all speakers, partners, and attendees for your commitment and participation. Welcome to RICMH 2026.</p>
+              </div>
+              <p class="mt-7 font-body text-[15px] text-gray-800 md:text-base">Warm regards,</p>
+              <p class="mt-1 font-heading text-[20px] font-bold text-gray-900 md:text-[22px]">Abdullah Alquiahis</p>
+              <p class="font-body text-[15px] text-gray-800 md:text-base">Chairman, RICMH 2026</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section id="about-conference" class="w-full pt-20 pb-[130px] md:pt-24 md:pb-[146px]" style="background: linear-gradient(180deg, #ffffff 0%, #E5E5E500 100%), #E5E5E5;">
+        <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+          <div dir="ltr" class="text-center">
+            <h2 class="font-heading text-[43px] font-bold uppercase leading-[1.1] tracking-[-1px] text-black">
+              About the Conference
+            </h2>
+            <p class="mt-2 font-heading text-[19px] font-light uppercase leading-[1.2] tracking-[-1px] text-black">
+              International Congress on Metabolic Health 2026
+            </p>
+            <div class="mx-auto mt-8 max-w-[1036px]">
+              <p class="font-heading text-[19px] font-normal leading-10 text-black">
+                The Riyadh International Congress on Metabolic Health brings together leading clinicians, researchers, and healthcare professionals to explore the latest advancements in metabolic diseases.
+              </p>
+              <p class="font-heading text-[19px] font-normal leading-10 text-black">
+                Through expert-led sessions, scientific discussions, and evidence-based insights, the congress aims to address the growing challenges of diabetes, obesity, and cardiometabolic disorders.
+              </p>
+              <p class="font-heading text-[19px] font-normal leading-10 text-black">
+                Participants will gain practical clinical knowledge, engage with international experts, and contribute to shaping the future of metabolic medicine in the region.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="mx-auto mt-8 flex h-[60px] w-[213px] min-w-[105.77px] max-w-[604.37px] items-center justify-center gap-[7px] rounded-lg bg-[#7EC147] px-[25.18px] text-white shadow-[0_7px_13.3px_0_#00000029] transition hover:opacity-90"
+            >
+              <span class="font-heading text-[19px] font-normal leading-[30.22px]">Register Now</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <h3 class="mt-10 font-heading text-[52px] font-bold leading-[1.1] tracking-[-1px] text-black md:text-[58px]">
+              Who Should Attend
+            </h3>
+            <p class="mx-auto mt-4 max-w-[883px] font-heading text-[19px] font-normal leading-9 text-black">
+              This congress is designed for healthcare professionals involved in the prevention, diagnosis, and management of metabolic diseases.
+            </p>
+          </div>
+
+          <div dir="ltr" class="mt-10 grid grid-cols-3 gap-6">
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc1)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc1" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Endocrinologists &amp; Diabetologists</span>
+            </div>
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc2)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc2" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Internal Medicine Physicians</span>
+            </div>
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc3)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc3" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Family &amp; Primary Care Physicians</span>
+            </div>
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc4)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc4" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Allied Healthcare Professionals</span>
+            </div>
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc5)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc5" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Cardiologists &amp; Nephrologists</span>
+            </div>
+            <div class="flex h-[70px] w-full items-center rounded-lg bg-[#D9D9D9] px-5">
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
+                <circle cx="9" cy="9" r="8" fill="url(#gc6)" fill-opacity=".35"/>
+                <path d="M7.8 11.7a.75.75 0 0 1-.53-.22L5.7 9.9a.75.75 0 1 1 1.06-1.06l1.05 1.05 3.32-3.32a.75.75 0 1 1 1.06 1.06l-3.85 3.85a.75.75 0 0 1-.54.22Z" fill="#1D2F0E"/>
+                <defs>
+                  <linearGradient id="gc6" x1="4" y1="3" x2="14" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D8EEB6"/>
+                    <stop offset="1" stop-color="#85B944"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="ml-2 whitespace-nowrap font-heading text-[17px] font-normal leading-none text-[#1f1f1f]">Clinical Researchers &amp; Academics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="speakers-lineup" class="relative w-full overflow-hidden py-20 md:py-24">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style="background-image: url('./assets/bg-slide.jpg')"
+        ></div>
+        <div class="pointer-events-none absolute inset-0 z-0 hidden"></div>
+
+        <div dir="ltr" class="relative z-10 w-full">
+          <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+            <h2 class="mx-auto flex h-[76px] w-[473.04px] items-center justify-center text-center font-heading text-[43px] font-bold leading-[75.55px] tracking-[-1px] text-[#7EC147]">
+              Speakers Line-up
+            </h2>
+          </div>
+
+          <div class="relative mt-10 w-full overflow-x-hidden">
+            <button
+              id="speakers-prev"
+              aria-label="Previous speakers"
+              class="hidden"
+            >
+              <span class="text-xl leading-none">←</span>
+            </button>
+            <button
+              id="speakers-next"
+              aria-label="Next speakers"
+              class="hidden"
+            >
+              <span class="text-xl leading-none">→</span>
+            </button>
+
+            <div id="speakers-viewport" class="relative w-full overflow-hidden">
+              <div id="speakers-track" class="relative z-10 flex items-center gap-9 will-change-transform">
+                <article class="speaker-slide relative h-[347px] w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-bl-[130px] bg-[#ededed]">
+                  <div class="flex h-full items-start">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Hala Albuti" class="h-full w-[240px] shrink-0 rounded-bl-[130px] object-cover object-top" />
+                    <div class="min-w-0 flex-1 px-6 pt-5 pb-7">
+                      <p class="whitespace-nowrap font-body text-[24px] font-normal leading-tight tracking-[-0.01em] text-[#212121]">Advances in Understanding Metabolic Syndrome</p>
+                      <p class="mt-2 font-body text-[19px] font-normal leading-[25.12px] text-[#7b7b7b]">10:00 - 11.30</p>
+                      <div class="mt-4 h-[5px] w-[140px] bg-[#0f0f0f]"></div>
+                      <h3 class="mt-6 whitespace-nowrap font-heading text-[38px] font-bold leading-none tracking-[-0.02em] text-[#111]">Dr. Hala AlButi,</h3>
+                      <p class="mt-3 font-body text-[19px] font-normal leading-[25.12px] text-[#5e5e5e]">Professor of Health Policy and Pharma coeconomics Director of the Pharmacoeconomics Re search Unit Vice President of the Saudi Regional ISPOR Chapter College of Pharmacy King Saud University Riyadh, Saudi Arabia</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="speaker-slide relative h-[347px] w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-bl-[130px] bg-[#ededed]">
+                  <div class="flex h-full items-start">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Sara Alshammari" class="h-full w-[240px] shrink-0 rounded-bl-[130px] object-cover object-top" />
+                    <div class="min-w-0 flex-1 px-6 pt-5 pb-7">
+                      <p class="font-body text-[18px] text-[#212121]">Cardio-Metabolic Risk and Preventive Strategies</p>
+                      <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">11:45 - 12.30</p>
+                      <div class="mt-4 h-[5px] w-[140px] bg-[#0f0f0f]"></div>
+                      <h3 class="mt-6 font-heading text-[56px] font-semibold leading-none text-[#111]">Dr. Sara Alshammari,</h3>
+                      <p class="mt-3 font-body text-[19px] leading-[1.35] text-[#5e5e5e]">Consultant Endocrinology and Diabetes Care, metabolic prevention and integrated treatment pathways.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="speaker-slide relative h-[347px] w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-bl-[130px] bg-[#ededed]">
+                  <div class="flex h-full items-start">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Omar Alzahrani" class="h-full w-[240px] shrink-0 rounded-bl-[130px] object-cover object-top" />
+                    <div class="min-w-0 flex-1 px-6 pt-5 pb-7">
+                      <p class="font-body text-[18px] text-[#212121]">Obesity, Lifestyle Medicine, and Long-Term Outcomes</p>
+                      <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">13:30 - 14.15</p>
+                      <div class="mt-4 h-[5px] w-[140px] bg-[#0f0f0f]"></div>
+                      <h3 class="mt-6 font-heading text-[56px] font-semibold leading-none text-[#111]">Dr. Omar Alzahrani,</h3>
+                      <p class="mt-3 font-body text-[19px] leading-[1.35] text-[#5e5e5e]">Senior specialist in clinical nutrition and obesity management with focus on sustainable outcomes.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="speaker-slide relative h-[347px] w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-bl-[130px] bg-[#ededed]">
+                  <div class="flex h-full items-start">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Reem Alharbi" class="h-full w-[240px] shrink-0 rounded-bl-[130px] object-cover object-top" />
+                    <div class="min-w-0 flex-1 px-6 pt-5 pb-7">
+                      <p class="font-body text-[18px] text-[#212121]">New Horizons in Diabetes Management and Devices</p>
+                      <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">14:30 - 15.15</p>
+                      <div class="mt-4 h-[5px] w-[140px] bg-[#0f0f0f]"></div>
+                      <h3 class="mt-6 font-heading text-[56px] font-semibold leading-none text-[#111]">Dr. Reem Alharbi,</h3>
+                      <p class="mt-3 font-body text-[19px] leading-[1.35] text-[#5e5e5e]">Consultant in internal medicine with expertise in digital diabetes tools and clinical practice improvement.</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+            <div class="mt-10 flex items-center justify-center gap-6">
+              <a
+                href="#"
+                class="inline-flex h-[44px] items-center justify-center rounded-lg bg-white px-8 font-heading text-[14px] font-medium text-[#111111] transition hover:bg-[#f5f5f5]"
+              >
+                View Program
+              </a>
+              <a
+                href="#"
+                class="inline-flex h-[44px] items-center justify-center gap-1 rounded-lg bg-[#7AC843] px-8 font-heading text-[14px] font-medium text-[#14280a] transition hover:opacity-90"
+              >
+                <span>Speakers</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="what-to-expect"
+        dir="ltr"
+        class="relative w-full bg-white py-16 text-[#111] md:py-24"
+        lang="en"
+      >
+        <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+          <h2 class="text-center font-heading text-[28px] font-bold uppercase tracking-[0.08em] text-black md:text-[32px]">
+            What to expect
+          </h2>
+          <p
+            class="mx-auto mt-6 max-w-[820px] text-center font-body text-[16px] font-normal leading-[1.65] text-[#3a3a3a] md:text-[17px]"
+          >
+            The congress provides physicians and healthcare professionals with a focused platform to explore the latest
+            advancements in metabolic medicine and translate scientific knowledge into clinical practice.
+          </p>
+
+          <div class="mt-12 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-3 md:gap-6">
+            <article
+              class="flex flex-col rounded-br-[10px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[48px] border border-[#eeeeee] bg-white p-8 md:p-10"
+            >
+              <div class="flex h-12 w-12 shrink-0 items-center justify-start">
+                <img
+                  src="./assets/icon1.png"
+                  alt=""
+                  width="44"
+                  height="44"
+                  class="h-11 w-11 object-contain object-left"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="mt-6 font-heading text-[20px] font-bold leading-snug text-black md:text-[21px]">
+                Scientific Excellence
+              </h3>
+              <p class="mt-3 font-body text-[15px] font-normal leading-relaxed text-[#5c5c5c] md:text-[16px]">
+                Expert-led sessions covering the latest research, clinical evidence, and emerging treatment strategies in
+                metabolic diseases.
+              </p>
+            </article>
+
+            <article
+              class="flex flex-col rounded-br-[10px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[48px] border border-[#eeeeee] bg-white p-8 md:p-10"
+            >
+              <div class="flex h-12 w-12 shrink-0 items-center justify-start">
+                <img
+                  src="./assets/icon3.png"
+                  alt=""
+                  width="44"
+                  height="44"
+                  class="h-11 w-11 object-contain object-left"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="mt-6 font-heading text-[20px] font-bold leading-snug text-black md:text-[21px]">
+                Multidisciplinary Collaboration
+              </h3>
+              <p class="mt-3 font-body text-[15px] font-normal leading-relaxed text-[#5c5c5c] md:text-[16px]">
+                Engage in discussions with specialists across endocrinology, internal medicine, cardiology, and metabolic
+                care.
+              </p>
+            </article>
+
+            <article
+              class="flex flex-col rounded-br-[10px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[48px] border border-[#eeeeee] bg-white p-8 md:p-10"
+            >
+              <div class="flex h-12 w-12 shrink-0 items-center justify-start">
+                <img
+                  src="./assets/icon2.png"
+                  alt=""
+                  width="44"
+                  height="44"
+                  class="h-11 w-11 object-contain object-left"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="mt-6 font-heading text-[20px] font-bold leading-snug text-black md:text-[21px]">
+                Guidelines &amp; Innovation
+              </h3>
+              <p class="mt-3 font-body text-[15px] font-normal leading-relaxed text-[#5c5c5c] md:text-[16px]">
+                Explore the newest international guidelines, digital health tools, and innovative therapies shaping the
+                future of metabolic care.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="sponsors-partners"
+        dir="ltr"
+        lang="en"
+        class="relative w-full bg-white py-16 md:py-24"
+      >
+        <div class="mx-auto w-full max-w-[1280px] px-6 md:px-10">
+          <div
+            class="relative overflow-hidden rounded-2xl px-6 py-10 shadow-sm md:rounded-[14px] md:px-10 md:py-12"
+            style="
+              background-color: #1f3d14;
+              background-image: url('./assets/background-green.png'),
+                linear-gradient(to right, #66b244 0%, #1f3d14 100%);
+              background-size: cover, cover;
+              background-position: center, center;
+              background-repeat: no-repeat, no-repeat;
+              background-blend-mode: multiply, normal;
+            "
+          >
+            <div class="relative z-10 text-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
+              <h2 class="font-heading text-[22px] font-bold uppercase tracking-[0.08em] text-white md:text-[26px] lg:text-[28px]">
+                Our sponsors &amp; partner
+              </h2>
+              <p class="mx-auto mt-3 max-w-xl font-body text-[15px] font-normal leading-snug text-white md:text-[16px]">
+                Check Who Makes This Event Possible!
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-6 md:mt-10">
+            <div class="flex min-h-[112px] overflow-hidden rounded-lg border border-[#e8e8e8] md:min-h-[128px]">
+              <div
+                class="flex w-[148px] shrink-0 items-center justify-center rounded-l-lg bg-gradient-to-b from-[#4EB8C9] to-[#36A2B5] md:w-[168px]"
+              >
+                <span class="font-heading text-[15px] font-semibold text-white md:text-[16px]">Platinum</span>
+              </div>
+              <div
+                class="flex flex-1 items-center justify-center rounded-r-lg bg-[#F2F2F2] px-6 py-6 md:px-10"
+              >
+                <img
+                  src="./assets/novo.png"
+                  alt="Novo Nordisk"
+                  class="max-h-24 w-auto max-w-[min(100%,320px)] object-contain md:max-h-28"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <div class="flex min-h-[112px] overflow-hidden rounded-lg border border-[#e8e8e8] md:min-h-[128px]">
+              <div
+                class="flex w-[148px] shrink-0 items-center justify-center rounded-l-lg bg-gradient-to-b from-[#F1D371] to-[#E4BC4D] md:w-[168px]"
+              >
+                <span class="font-heading text-[15px] font-semibold text-white md:text-[16px]">Platinum</span>
+              </div>
+              <div
+                class="flex flex-1 items-center justify-center rounded-r-lg bg-[#F2F2F2] px-6 py-6 md:px-10"
+              >
+                <img
+                  src="./assets/lilly.png"
+                  alt="Lilly"
+                  class="max-h-24 w-auto max-w-[min(100%,280px)] object-contain md:max-h-28"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <div class="flex min-h-[112px] overflow-hidden rounded-lg border border-[#e8e8e8] md:min-h-[128px]">
+              <div
+                class="flex w-[148px] shrink-0 items-center justify-center rounded-l-lg bg-gradient-to-b from-[#D1D5D8] to-[#AEB3B7] md:w-[168px]"
+              >
+                <span class="font-heading text-[15px] font-semibold text-white md:text-[16px]">Platinum</span>
+              </div>
+              <div
+                class="flex flex-1 items-center justify-center rounded-r-lg bg-[#F2F2F2] px-6 py-6 md:px-10"
+                aria-label="Partner logo placeholder"
+              >
+                <!-- شعار الراعي الثالث (فارغ في التصميم الأصلي) -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="register-cta"
+        dir="ltr"
+        lang="en"
+        class="relative w-full bg-white py-16 md:py-24"
+      >
+        <div class="mx-auto flex w-full max-w-[920px] flex-col items-center px-6 md:px-10">
+          <h2
+            class="font-heading text-center text-xl font-bold uppercase leading-snug tracking-wide text-[#1a1a1a] md:text-2xl lg:text-[26px]"
+          >
+            Be part of shaping the future of diabetes and metabolic health in
+            Saudi Arabia
+          </h2>
+          <p
+            class="mt-4 text-center font-body text-sm font-normal text-[#555555] md:mt-5 md:text-base"
+          >
+            Scientific Attendance | CME Accredited
+          </p>
+
+          <div class="mt-10 flex w-full flex-col items-center gap-5 md:mt-12 md:gap-6">
+            <!-- رابط الدفع/التسجيل — غيّر href للرابط الفعلي -->
+            <a
+              href="#"
+              class="group relative inline-flex h-[146px] w-[min(287px,calc(100vw-3rem))] max-w-full shrink-0 flex-col items-center justify-center gap-2 bg-[#7EC147] px-4 text-white shadow-[0_1px_3px_rgba(0,0,0,0.08)] transition hover:brightness-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6fa344]"
+              style="border-radius: 14px"
+              aria-label="Registration price 75 Saudi Riyal — proceed to payment"
+            >
+              <div
+                class="pointer-events-none absolute left-0 top-1/2 flex -translate-y-1/2 flex-col items-start gap-2"
+                aria-hidden="true"
+              >
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 -translate-x-1/2 rounded-full bg-white"></span>
+              </div>
+              <div
+                class="pointer-events-none absolute right-0 top-1/2 flex -translate-y-1/2 flex-col items-end gap-2"
+                aria-hidden="true"
+              >
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+                <span class="h-3.5 w-3.5 shrink-0 translate-x-1/2 rounded-full bg-white"></span>
+              </div>
+              <span class="h-px w-[72%] max-w-[200px] bg-white"></span>
+              <span
+                class="flex flex-row items-center justify-center gap-2 font-heading text-[33.33px] font-black uppercase leading-none tracking-[-1.16px]"
+              >
+                <img
+                  src="./assets/sar.png"
+                  alt=""
+                  class="h-[28px] w-auto shrink-0 object-contain"
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+                75
+              </span>
+              <span class="h-px w-[72%] max-w-[200px] bg-white"></span>
+            </a>
+
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 rounded-full bg-[#7EC147] px-10 py-3 font-heading text-sm font-semibold text-white shadow-sm transition hover:brightness-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6fa344] md:px-12 md:py-3.5 md:text-base"
+            >
+              Register
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        id="reach-us"
+        dir="ltr"
+        lang="en"
+        class="relative w-full overflow-hidden bg-[#0c160c] text-white"
+      >
+        <div
+          class="reach-us-lines relative px-6 py-16 md:px-10 md:py-24"
+          style="
+            background-color: #000000;
+            background-image: linear-gradient(180deg, #7ec147 0%, #000000 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div class="relative z-[1] mx-auto flex w-full max-w-[1280px] flex-col items-center gap-6">
+            <p class="font-body text-center text-sm font-normal text-white md:text-[15px]">
+              Reach us
+            </p>
+            <h2
+              class="font-heading text-center text-[22px] font-bold uppercase leading-tight tracking-wide text-white md:text-[28px] lg:text-[32px]"
+            >
+              Get direction to the event
+            </h2>
+
+            <div class="mt-4 w-full md:mt-6">
+              <div
+                class="grid w-full grid-cols-1 gap-0 md:grid-cols-[1fr_1.12fr] md:items-stretch"
+              >
+                <div
+                  class="flex h-full min-h-[260px] w-full items-center justify-center overflow-hidden rounded-t-lg rounded-b-none bg-[#0a120a] md:min-h-[340px] md:min-h-0 md:rounded-bl-lg md:rounded-br-none md:rounded-tl-lg md:rounded-tr-none"
+                >
+                  <img
+                    src="./assets/hotel.png"
+                    alt="Event venue building"
+                    class="max-h-full max-w-full object-contain object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="relative min-h-[260px] w-full overflow-hidden rounded-b-lg rounded-t-none md:min-h-[340px] md:rounded-bl-none md:rounded-br-lg md:rounded-tl-none md:rounded-tr-lg"
+                >
+                  <iframe
+                    title="Google Map — event location"
+                    class="absolute inset-0 h-full w-full border-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624589.5021236665!2d44.00861665!3d24.71355165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c038e2c9b!2sRiyadh!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="mt-3 flex w-full justify-end md:mt-4">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&amp;query=Riyadh+Saudi+Arabia"
+                  class="inline-flex items-center gap-2 font-body text-sm text-white underline decoration-white underline-offset-4 transition hover:text-white/90"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="./assets/loction.png"
+                    alt=""
+                    class="h-4 w-4 shrink-0 object-contain"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  />
+                  Location
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-8 md:mt-10 md:gap-10">
+              <a
+                href="#"
+                class="opacity-90 transition hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="LinkedIn"
+              >
+                <img
+                  src="./assets/in.png"
+                  alt=""
+                  class="h-8 w-8 object-contain md:h-9 md:w-9"
+                  width="36"
+                  height="36"
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                href="#"
+                class="opacity-90 transition hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="X"
+              >
+                <img
+                  src="./assets/x.png"
+                  alt=""
+                  class="h-8 w-8 object-contain md:h-9 md:w-9"
+                  width="36"
+                  height="36"
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                href="#"
+                class="opacity-90 transition hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="Instagram"
+              >
+                <img
+                  src="./assets/insta.png"
+                  alt=""
+                  class="h-8 w-8 object-contain md:h-9 md:w-9"
+                  width="36"
+                  height="36"
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="w-full border-t border-white/5 bg-black px-6 py-5 text-white md:px-10 md:py-6"
+        >
+          <div
+            class="mx-auto flex w-full max-w-[1280px] flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6"
+          >
+            <p class="text-center font-body text-[11px] leading-relaxed text-white md:text-left md:text-xs lg:text-sm">
+              © 2023 All Rights Reserved – The Impact of Healthcare Reform on
+              Rheumatology Practice in Saudi Arabia
+            </p>
+            <div
+              class="flex flex-wrap items-center justify-center gap-3 md:justify-end"
+            >
+              <span class="font-body text-xs text-white md:text-sm">Powered by</span>
+              <span
+                class="hidden h-4 w-px bg-white/50 sm:inline-block"
+                aria-hidden="true"
+              ></span>
+              <a
+                href="https://www.plantastic-event.com/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex shrink-0 rounded-sm transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="Plantastic — فتح الموقع"
+              >
+                <img
+                  src="./assets/plantastic.png"
+                  alt="Plantastic"
+                  class="h-5 w-auto object-contain opacity-95 md:h-6"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- ثابتان أسفل الشاشة مع التمرير -->
+    <a
+      href="#"
+      dir="ltr"
+      class="fixed bottom-6 left-4 z-[100] flex items-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-md transition hover:opacity-90 md:bottom-8 md:left-8"
+    >
+      <svg
+        class="h-5 w-5 shrink-0"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+      <span>Contact Us</span>
+    </a>
+    <a
+      href="#top"
+      aria-label="Back to top"
+      class="fixed bottom-6 right-4 z-[100] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-md transition hover:bg-gray-400 md:bottom-8 md:right-8"
+    >
+      <span class="font-heading text-lg leading-none">↑</span>
+    </a>
+
+    <script>
+      const targetDate = new Date("2026-04-03T00:00:00").getTime()
+      const countDays = document.getElementById("count-days")
+      const countHours = document.getElementById("count-hours")
+      const countMinutes = document.getElementById("count-minutes")
+      const countSeconds = document.getElementById("count-seconds")
+
+      function pad(value) {
+        return String(value).padStart(2, "0")
+      }
+
+      function updateMainCounter() {
+        const now = Date.now()
+        const distance = targetDate - now
+
+        if (distance <= 0) {
+          countDays.textContent = "00"
+          countHours.textContent = "00"
+          countMinutes.textContent = "00"
+          countSeconds.textContent = "00"
+          return
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24)
+        const minutes = Math.floor((distance / (1000 * 60)) % 60)
+        const seconds = Math.floor((distance / 1000) % 60)
+
+        countDays.textContent = pad(days)
+        countHours.textContent = pad(hours)
+        countMinutes.textContent = pad(minutes)
+        countSeconds.textContent = pad(seconds)
+      }
+
+      updateMainCounter()
+      setInterval(updateMainCounter, 1000)
+
+      const speakersSection = document.getElementById("speakers-lineup")
+      const speakersViewport = document.getElementById("speakers-viewport")
+      const speakersTrack = document.getElementById("speakers-track")
+      const speakersPrev = document.getElementById("speakers-prev")
+      const speakersNext = document.getElementById("speakers-next")
+
+      if (speakersTrack && speakersViewport) {
+        const initialSlides = Array.from(speakersTrack.children)
+        if (initialSlides.length > 1) {
+          const firstClone = initialSlides[0].cloneNode(true)
+          const lastClone = initialSlides[initialSlides.length - 1].cloneNode(true)
+          speakersTrack.insertBefore(lastClone, initialSlides[0])
+          speakersTrack.appendChild(firstClone)
+        }
+
+        const speakerSlides = Array.from(speakersTrack.children)
+        const realSlidesCount = Math.max(1, speakerSlides.length - 2)
+        let currentSpeakerIndex = realSlidesCount > 1 ? 1 : 0
+        let autoSlideTimer = null
+
+        const ease = "cubic-bezier(0.22, 1, 0.36, 1)"
+        const slideTransition = `transform 0.65s ${ease}, opacity 0.65s ${ease}, filter 0.65s ${ease}, box-shadow 0.65s ${ease}`
+        speakerSlides.forEach((slide) => {
+          slide.style.willChange = "transform, opacity, filter, box-shadow"
+          slide.style.transition = slideTransition
+        })
+
+        function getSlideGap() {
+          const g = parseFloat(getComputedStyle(speakersTrack).columnGap || getComputedStyle(speakersTrack).gap || "0")
+          return Number.isFinite(g) ? g : 0
+        }
+
+        /** Layout width (ignores transform scale) — fixes off-center active slide */
+        function getSlideLayoutWidth() {
+          const ref = speakerSlides[Math.min(1, speakerSlides.length - 1)] || speakerSlides[0]
+          const w = ref ? ref.offsetWidth : 0
+          return w > 0 ? w : 920
+        }
+
+        /** Translate track so slide `index` is centered in viewport (geometric center) */
+        function getOffsetForIndex(index) {
+          if (!speakerSlides.length) return 0
+          const slideW = getSlideLayoutWidth()
+          const gapValue = getSlideGap()
+          const vw = speakersViewport.clientWidth
+          const slideCenterX = index * (slideW + gapValue) + slideW / 2
+          const viewportCenterX = vw / 2
+          return slideCenterX - viewportCenterX
+        }
+
+        function mapToRealIndex(index) {
+          if (realSlidesCount <= 1) return 0
+          if (index === 0) return realSlidesCount - 1
+          if (index === speakerSlides.length - 1) return 0
+          return index - 1
+        }
+
+        function updateSlidesVisualState() {
+          const currentRealIndex = mapToRealIndex(currentSpeakerIndex)
+          speakerSlides.forEach((slide, index) => {
+            const slideRealIndex = mapToRealIndex(index)
+            const rawDistance = Math.abs(slideRealIndex - currentRealIndex)
+            const distance = Math.min(rawDistance, realSlidesCount - rawDistance)
+
+            // Cap distance so "far" slides stay consistent.
+            const cappedDistance = Math.min(distance, 2)
+
+            // مركز واضح | الجيران والبعيد: blur فقط (بدون تدرج أسود على الحواف أو طبقة سوداء على الكارت)
+            if (cappedDistance === 0) {
+              slide.style.opacity = "1"
+              slide.style.transform = "scale(1)"
+              slide.style.filter = "blur(0px)"
+              slide.style.zIndex = "3"
+              slide.style.boxShadow =
+                "0 32px 80px rgba(0,0,0,0.22), 0 14px 40px rgba(0,0,0,0.14), 0 0 0 1px rgba(255,255,255,0.05)"
+            } else if (cappedDistance === 1) {
+              slide.style.opacity = "0.48"
+              slide.style.transform = "scale(0.84)"
+              slide.style.filter = "blur(2.25px)"
+              slide.style.zIndex = "2"
+              slide.style.boxShadow = "none"
+            } else {
+              slide.style.opacity = "0.22"
+              slide.style.transform = "scale(0.8)"
+              slide.style.filter = "blur(3.25px)"
+              slide.style.zIndex = "1"
+              slide.style.boxShadow = "none"
+            }
+          })
+        }
+
+        function setSpeakerPosition(withTransition = true) {
+          speakersTrack.style.transition = withTransition
+            ? `transform 0.65s ${ease}`
+            : "transform 0s linear"
+          const offsetX = getOffsetForIndex(currentSpeakerIndex)
+          const x = Math.round(offsetX * 100) / 100
+          speakersTrack.style.transform = `translate3d(-${x}px, 0, 0)`
+          updateSlidesVisualState()
+        }
+
+        function goToNextSpeaker() {
+          currentSpeakerIndex += 1
+          setSpeakerPosition(true)
+        }
+
+        function goToPrevSpeaker() {
+          currentSpeakerIndex -= 1
+          setSpeakerPosition(true)
+        }
+
+        /** بعد إخفاء التاب: transitionend قد لا يشتغل + interval قد يراكم نقرات → فهرس يخرج عن المسار والشريط يختفي */
+        function repairSpeakersCarouselState() {
+          const n = speakerSlides.length
+          if (n <= 1) return
+
+          if (currentSpeakerIndex < 0 || currentSpeakerIndex >= n) {
+            currentSpeakerIndex = realSlidesCount > 1 ? 1 : 0
+            return
+          }
+          if (currentSpeakerIndex === n - 1) {
+            currentSpeakerIndex = 1
+          } else if (currentSpeakerIndex === 0) {
+            currentSpeakerIndex = n - 2
+          }
+        }
+
+        function startAutoSlide() {
+          if (autoSlideTimer) clearInterval(autoSlideTimer)
+          autoSlideTimer = setInterval(() => {
+            if (document.hidden) return
+            goToNextSpeaker()
+          }, 3600)
+        }
+
+        function stopAutoSlide() {
+          if (autoSlideTimer) {
+            clearInterval(autoSlideTimer)
+            autoSlideTimer = null
+          }
+        }
+
+        speakersTrack.addEventListener("transitionend", (event) => {
+          if (event.propertyName !== "transform") return
+          if (currentSpeakerIndex === speakerSlides.length - 1) {
+            currentSpeakerIndex = 1
+            setSpeakerPosition(false)
+          } else if (currentSpeakerIndex === 0) {
+            currentSpeakerIndex = speakerSlides.length - 2
+            setSpeakerPosition(false)
+          }
+        })
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            stopAutoSlide()
+            return
+          }
+          repairSpeakersCarouselState()
+          requestAnimationFrame(() => {
+            setSpeakerPosition(false)
+            updateSlidesVisualState()
+            startAutoSlide()
+          })
+        })
+
+        window.addEventListener("pageshow", (event) => {
+          if (!event.persisted) return
+          repairSpeakersCarouselState()
+          requestAnimationFrame(() => {
+            setSpeakerPosition(false)
+            updateSlidesVisualState()
+            startAutoSlide()
+          })
+        })
+
+        if (speakersPrev) speakersPrev.addEventListener("click", goToPrevSpeaker)
+        if (speakersNext) speakersNext.addEventListener("click", goToNextSpeaker)
+
+        window.addEventListener("resize", () => {
+          requestAnimationFrame(() => setSpeakerPosition(false))
+        })
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setSpeakerPosition(false)
+            startAutoSlide()
+          })
+        })
+      }
+    </script>
+  </body>
+</html>
