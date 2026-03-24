@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { Fragment, useEffect, useMemo, useState } from "react"
 
 const targetDate = new Date("2026-04-05T00:00:00")
 
@@ -25,7 +25,7 @@ function getTimeLeft() {
 
 function TimeBlock({ label, value }) {
   return (
-    <div className="flex min-w-[78px] flex-col items-center gap-2">
+    <div className="flex min-w-0 flex-col items-center gap-2">
       <div className="font-heading text-[38px] font-extrabold leading-none text-white">
         {value}
       </div>
@@ -57,19 +57,19 @@ function Countdown() {
 
   return (
     <div className="mx-auto mt-12 w-full max-w-[700px] rounded-card border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-md md:px-8">
-      <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-3 overflow-x-hidden px-1 sm:gap-x-2 md:gap-x-4">
+      <div className="mx-auto grid w-full max-w-[min(100%,640px)] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-x-0 px-1 sm:gap-x-1">
         {items.map((item, index) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-2 sm:gap-3 md:gap-4"
-          >
+          <Fragment key={item.label}>
             <TimeBlock label={item.label} value={item.value} />
             {index !== items.length - 1 && (
-              <span className="mb-5 select-none font-heading text-3xl font-semibold text-white">
+              <span
+                className="mb-5 select-none self-start pt-1 font-heading text-3xl font-semibold text-white sm:pt-0"
+                aria-hidden
+              >
                 :
               </span>
             )}
-          </div>
+          </Fragment>
         ))}
       </div>
     </div>

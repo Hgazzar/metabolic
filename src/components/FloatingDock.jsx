@@ -6,7 +6,7 @@ function FloatingDock() {
         target="_blank"
         rel="noopener noreferrer"
         dir="ltr"
-        className="fixed bottom-6 left-1/2 z-[500] flex w-auto min-w-0 max-w-[80%] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-md transition hover:opacity-90 md:bottom-8"
+        className="fixed bottom-6 left-1/2 z-[1000] flex w-max min-w-0 max-w-[min(80%,280px)] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90 md:bottom-8"
       >
         <svg
           className="h-5 w-5 shrink-0"
@@ -21,7 +21,7 @@ function FloatingDock() {
       <a
         href="#top"
         aria-label="العودة لأعلى الصفحة"
-        className="fixed bottom-6 right-4 z-[500] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-md transition hover:bg-gray-400 md:bottom-8 md:right-8"
+        className="fixed bottom-6 right-4 z-[1000] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-lg transition hover:bg-gray-400 max-[380px]:bottom-[5.25rem] sm:bottom-6 md:bottom-8 md:right-8"
       >
         <span className="font-heading text-lg leading-none">↑</span>
       </a>

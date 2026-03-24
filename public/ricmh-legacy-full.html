@@ -158,68 +158,63 @@
         style="width: 100%; max-width: 100vw; background: linear-gradient(87.4deg, #7AC843 -18.58%, #000000 140.14%, #000000 141.03%);"
       >
         <div class="absolute inset-0 bg-black/18"></div>
-        <div dir="ltr" class="relative z-10 mx-auto flex w-full max-w-[min(100%,720px)] flex-row flex-wrap items-center justify-center gap-x-1 gap-y-3 overflow-x-hidden px-3 sm:gap-x-2 md:gap-x-4 md:px-4">
-          <div class="flex min-w-[3rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+        <!-- Grid (no flex-wrap) يمنع خطاً شبحياً بجانب الثواني من التفاف الصف أو شريط التمرير -->
+        <div
+          dir="ltr"
+          class="relative z-10 mx-auto grid w-full max-w-[min(100%,680px)] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-x-0 px-2 sm:gap-x-1 md:px-4"
+        >
+          <div class="flex min-w-0 flex-col items-center gap-2">
             <span
               id="count-days"
-              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              class="text-center font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
               >00</span>
             <span
-              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              class="text-center font-heading text-[clamp(0.75rem,2.8vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
               >Days</span>
           </div>
-          <div
-            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center px-0.5 sm:px-1"
-            aria-hidden="true"
-          >
-            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white select-none"
+          <div class="flex self-start pt-[0.15em] sm:pt-0" aria-hidden="true">
+            <span class="font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none text-white select-none"
               >:</span>
           </div>
-          <div class="flex min-w-[3rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+          <div class="flex min-w-0 flex-col items-center gap-2">
             <span
               id="count-hours"
-              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              class="text-center font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
               >00</span>
             <span
-              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              class="text-center font-heading text-[clamp(0.75rem,2.8vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
               >Hours</span>
           </div>
-          <div
-            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center px-0.5 sm:px-1"
-            aria-hidden="true"
-          >
-            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white select-none"
+          <div class="flex self-start pt-[0.15em] sm:pt-0" aria-hidden="true">
+            <span class="font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none text-white select-none"
               >:</span>
           </div>
-          <div class="flex min-w-[3rem] flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+          <div class="flex min-w-0 flex-col items-center gap-2">
             <span
               id="count-minutes"
-              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              class="text-center font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
               >00</span>
             <span
-              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              class="text-center font-heading text-[clamp(0.75rem,2.8vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
               >Minutes</span>
           </div>
-          <div
-            class="flex h-[clamp(2.75rem,10vw,5.5625rem)] shrink-0 items-center justify-center px-0.5 sm:px-1"
-            aria-hidden="true"
-          >
-            <span class="font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none text-white select-none"
+          <div class="flex self-start pt-[0.15em] sm:pt-0" aria-hidden="true">
+            <span class="font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none text-white select-none"
               >:</span>
           </div>
-          <div class="flex min-w-0 flex-col items-center gap-2 sm:min-w-[4rem] md:min-w-[5rem]">
+          <div class="flex min-w-0 flex-col items-center gap-2">
             <span
               id="count-seconds"
-              class="text-center font-heading text-[clamp(2.75rem,10vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
+              class="text-center font-heading text-[clamp(2rem,8.5vw,5.5625rem)] font-medium leading-none tabular-nums tracking-normal text-white"
               >00</span>
             <span
-              class="text-center font-heading text-[clamp(0.8125rem,3vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
+              class="text-center font-heading text-[clamp(0.75rem,2.8vw,1.5625rem)] font-light leading-none tracking-normal text-white/90"
               >Seconds</span>
           </div>
         </div>
       </section>
 
-    <section id="chairman-message" class="relative w-full min-h-[700px] overflow-hidden bg-white py-20 md:py-24">
+    <section id="chairman-message" class="relative w-full min-h-0 overflow-hidden bg-white py-16 md:min-h-[700px] md:py-24">
         <div
           aria-hidden="true"
           class="pointer-events-none absolute left-0 right-0 top-0 z-0 w-full overflow-hidden bg-left bg-no-repeat"
@@ -228,9 +223,9 @@
 
         <div class="relative z-10 mx-auto w-full px-4 py-6 sm:px-6 md:px-12 md:py-10">
           <div dir="ltr" class="relative z-20 mx-auto flex w-full max-w-[1547px] flex-col overflow-visible rounded-bl-[120px] border border-[#7AC843]/30 bg-white sm:w-[92%] sm:rounded-bl-[180px] md:w-[82%] md:flex-row md:items-end md:rounded-bl-[233px]" style="border-width: 1.5px;">
-            <img src="./assets/comma.png" alt="" class="absolute -top-5 left-1/2 z-30 h-11 w-11 -translate-x-1/2 object-contain sm:h-12 sm:w-12 md:left-[28%] md:h-14 md:w-14 md:translate-x-0" aria-hidden="true" />
-            <img src="./assets/comma.png" alt="" class="absolute -bottom-4 left-1/2 z-30 h-11 w-11 -translate-x-1/2 rotate-180 object-contain sm:-bottom-5 sm:h-12 sm:w-12 md:left-auto md:right-10 md:translate-x-0 md:rotate-180" aria-hidden="true" />
-            <div class="scroll-reveal flex shrink-0 items-end justify-center overflow-hidden pt-10 md:h-full md:w-[35.5%] md:justify-start md:pt-0">
+            <img src="./assets/comma.png" alt="" class="absolute -top-4 left-1/2 z-30 h-10 w-10 -translate-x-1/2 object-contain sm:-top-5 sm:h-12 sm:w-12 md:left-[28%] md:h-14 md:w-14 md:translate-x-0" aria-hidden="true" />
+            <img src="./assets/comma.png" alt="" class="absolute -bottom-3 left-1/2 z-30 h-10 w-10 -translate-x-1/2 rotate-180 object-contain sm:-bottom-5 sm:h-12 sm:w-12 md:left-auto md:right-10 md:translate-x-0 md:rotate-180" aria-hidden="true" />
+            <div class="scroll-reveal flex shrink-0 items-end justify-center overflow-hidden pt-12 md:h-full md:w-[35.5%] md:justify-start md:pt-0">
               <img
                 src="./assets/doctor.png"
                 alt="Abdullah Alquiahis - Chairman RICMH 2026"
@@ -238,7 +233,7 @@
                 style="position: relative; left: 0; bottom: 0px; opacity: 1;"
               />
             </div>
-            <div class="scroll-reveal relative flex flex-1 flex-col justify-start px-5 pb-10 pt-6 text-center sm:px-7 sm:pb-12 sm:pt-8 sm:text-left md:px-10 md:py-14 lg:px-12">
+            <div class="scroll-reveal relative flex flex-1 flex-col justify-start px-5 pb-14 pt-8 text-center sm:px-7 sm:pb-16 sm:pt-10 sm:text-left md:px-10 md:py-14 lg:px-12">
               <h2 class="font-heading text-xl font-semibold text-[#7AC843] md:text-2xl">Chairman's Welcome Message</h2>
               <p class="mt-3 font-heading text-base font-bold text-gray-900 md:text-[28px]">Dear Guests and Colleagues,</p>
               <div class="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-gray-800 md:text-base">
@@ -291,8 +286,8 @@
             </p>
           </div>
 
-          <div dir="ltr" class="scroll-reveal mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+          <div dir="ltr" class="scroll-reveal mt-10 flex w-full min-w-0 max-w-full flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc1)" fill-opacity=".35"/>
@@ -306,7 +301,7 @@
               </svg>
               <span class="min-w-0 flex-1 font-heading text-[17px] font-normal leading-snug text-[#1f1f1f]">Endocrinologists &amp; Diabetologists</span>
             </div>
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc2)" fill-opacity=".35"/>
@@ -320,7 +315,7 @@
               </svg>
               <span class="min-w-0 flex-1 font-heading text-[17px] font-normal leading-snug text-[#1f1f1f]">Internal Medicine Physicians</span>
             </div>
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc3)" fill-opacity=".35"/>
@@ -334,7 +329,7 @@
               </svg>
               <span class="min-w-0 flex-1 font-heading text-[17px] font-normal leading-snug text-[#1f1f1f]">Family &amp; Primary Care Physicians</span>
             </div>
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc4)" fill-opacity=".35"/>
@@ -348,7 +343,7 @@
               </svg>
               <span class="min-w-0 flex-1 font-heading text-[17px] font-normal leading-snug text-[#1f1f1f]">Allied Healthcare Professionals</span>
             </div>
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc5)" fill-opacity=".35"/>
@@ -362,7 +357,7 @@
               </svg>
               <span class="min-w-0 flex-1 font-heading text-[17px] font-normal leading-snug text-[#1f1f1f]">Cardiologists &amp; Nephrologists</span>
             </div>
-            <div class="flex min-h-0 w-full min-w-0 items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
+            <div class="flex min-h-0 w-full min-w-0 max-w-full items-start gap-3 rounded-lg bg-[#D9D9D9] px-4 py-4 text-left">
               <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <circle cx="9" cy="9" r="8" fill="#9ECC5A"/>
                 <circle cx="9" cy="9" r="8" fill="url(#gc6)" fill-opacity=".35"/>
@@ -415,8 +410,8 @@
               <div id="speakers-track" class="relative z-10 flex items-center gap-9 will-change-transform">
                 <article class="speaker-slide relative h-auto min-h-0 w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-2xl bg-[#ededed] md:h-[347px] md:rounded-bl-[130px]">
                   <div class="flex h-full flex-col md:flex-row md:items-stretch">
-                    <img src="./assets/dr-speaker.png" alt="Dr. Hala Albuti" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-center shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-top md:ring-0" />
-                    <div class="min-w-0 flex-1 px-5 pb-7 pt-5 md:px-6">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Hala Albuti" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-[center_20%] shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-cover md:object-top md:ring-0" />
+                    <div class="min-w-0 flex-1 px-5 pb-7 pt-3 text-center md:px-6 md:pt-5 md:text-left">
                       <p class="font-body text-[18px] font-normal leading-snug tracking-[-0.01em] text-[#212121] sm:text-[20px] md:whitespace-nowrap md:text-[24px]">Advances in Understanding Metabolic Syndrome</p>
                       <p class="mt-2 font-body text-[15px] font-normal leading-[25.12px] text-[#7b7b7b] md:text-[19px]">10:00 - 11.30</p>
                       <div class="mt-4 h-[5px] w-[140px] max-w-full bg-[#0f0f0f]"></div>
@@ -428,8 +423,8 @@
 
                 <article class="speaker-slide relative h-auto min-h-0 w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-2xl bg-[#ededed] md:h-[347px] md:rounded-bl-[130px]">
                   <div class="flex h-full flex-col md:flex-row md:items-stretch">
-                    <img src="./assets/dr-speaker.png" alt="Dr. Sara Alshammari" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-center shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-top md:ring-0" />
-                    <div class="min-w-0 flex-1 px-5 pb-7 pt-5 md:px-6">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Sara Alshammari" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-[center_20%] shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-cover md:object-top md:ring-0" />
+                    <div class="min-w-0 flex-1 px-5 pb-7 pt-3 text-center md:px-6 md:pt-5 md:text-left">
                       <p class="font-body text-[17px] text-[#212121] sm:text-[18px]">Cardio-Metabolic Risk and Preventive Strategies</p>
                       <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">11:45 - 12.30</p>
                       <div class="mt-4 h-[5px] w-[140px] max-w-full bg-[#0f0f0f]"></div>
@@ -441,8 +436,8 @@
 
                 <article class="speaker-slide relative h-auto min-h-0 w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-2xl bg-[#ededed] md:h-[347px] md:rounded-bl-[130px]">
                   <div class="flex h-full flex-col md:flex-row md:items-stretch">
-                    <img src="./assets/dr-speaker.png" alt="Dr. Omar Alzahrani" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-center shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-top md:ring-0" />
-                    <div class="min-w-0 flex-1 px-5 pb-7 pt-5 md:px-6">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Omar Alzahrani" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-[center_20%] shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-cover md:object-top md:ring-0" />
+                    <div class="min-w-0 flex-1 px-5 pb-7 pt-3 text-center md:px-6 md:pt-5 md:text-left">
                       <p class="font-body text-[17px] text-[#212121] sm:text-[18px]">Obesity, Lifestyle Medicine, and Long-Term Outcomes</p>
                       <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">13:30 - 14.15</p>
                       <div class="mt-4 h-[5px] w-[140px] max-w-full bg-[#0f0f0f]"></div>
@@ -454,8 +449,8 @@
 
                 <article class="speaker-slide relative h-auto min-h-0 w-[920px] max-w-[calc(100vw-56px)] shrink-0 overflow-hidden rounded-2xl bg-[#ededed] md:h-[347px] md:rounded-bl-[130px]">
                   <div class="flex h-full flex-col md:flex-row md:items-stretch">
-                    <img src="./assets/dr-speaker.png" alt="Dr. Reem Alharbi" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-center shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-top md:ring-0" />
-                    <div class="min-w-0 flex-1 px-5 pb-7 pt-5 md:px-6">
+                    <img src="./assets/dr-speaker.png" alt="Dr. Reem Alharbi" class="mx-auto mt-4 h-28 w-28 shrink-0 rounded-full object-cover object-[center_20%] shadow-sm ring-2 ring-white/80 sm:h-32 sm:w-32 md:mt-0 md:h-full md:w-[240px] md:rounded-none md:rounded-bl-[130px] md:object-cover md:object-top md:ring-0" />
+                    <div class="min-w-0 flex-1 px-5 pb-7 pt-3 text-center md:px-6 md:pt-5 md:text-left">
                       <p class="font-body text-[17px] text-[#212121] sm:text-[18px]">New Horizons in Diabetes Management and Devices</p>
                       <p class="mt-2 font-body text-[15px] text-[#7b7b7b]">14:30 - 15.15</p>
                       <div class="mt-4 h-[5px] w-[140px] max-w-full bg-[#0f0f0f]"></div>
@@ -907,7 +902,7 @@
     <a
       href="#"
       dir="ltr"
-      class="fixed bottom-6 left-1/2 z-[500] flex w-auto min-w-0 max-w-[80%] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-md transition hover:opacity-90 md:bottom-8"
+      class="fixed bottom-6 left-1/2 z-[1000] flex w-max min-w-0 max-w-[min(80%,280px)] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-3 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90 md:bottom-8"
     >
       <svg
         class="h-5 w-5 shrink-0"
@@ -924,7 +919,7 @@
     <a
       href="#top"
       aria-label="Back to top"
-      class="fixed bottom-6 right-4 z-[500] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-md transition hover:bg-gray-400 md:bottom-8 md:right-8"
+      class="fixed bottom-6 right-4 z-[1000] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-lg transition hover:bg-gray-400 max-[380px]:bottom-[5.25rem] sm:bottom-6 md:bottom-8 md:right-8"
     >
       <span class="font-heading text-lg leading-none">↑</span>
     </a>
