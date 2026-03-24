@@ -1,12 +1,34 @@
+import { createPortal } from "react-dom"
+import { useEffect, useState } from "react"
+
+function applyWhatsAppFixedStyles(el) {
+  if (!el) return
+  el.style.setProperty("position", "fixed", "important")
+  el.style.setProperty("bottom", "24px", "important")
+  el.style.setProperty("left", "50%", "important")
+  el.style.setProperty("transform", "translateX(-50%)", "important")
+  el.style.setProperty("z-index", "9999", "important")
+  el.style.setProperty("display", "flex", "important")
+}
+
 function FloatingDock() {
-  return (
+  const [mountNode, setMountNode] = useState(null)
+
+  useEffect(() => {
+    setMountNode(document.body)
+  }, [])
+
+  if (!mountNode) return null
+
+  return createPortal(
     <>
       <a
+        ref={applyWhatsAppFixedStyles}
         href="https://wa.me/"
         target="_blank"
         rel="noopener noreferrer"
         dir="ltr"
-        className="fixed bottom-6 left-1/2 z-[1000] flex -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
+        className="items-center justify-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
       >
         <svg
           className="h-5 w-5 shrink-0"
@@ -21,11 +43,12 @@ function FloatingDock() {
       <a
         href="#top"
         aria-label="العودة لأعلى الصفحة"
-        className="fixed bottom-6 right-4 z-[1000] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-lg transition hover:bg-gray-400 max-[380px]:bottom-[5.25rem] sm:bottom-6 md:bottom-8 md:right-8"
+        className="fixed bottom-6 right-4 z-[9999] flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 text-gray-700 shadow-lg transition hover:bg-gray-400 max-[380px]:bottom-[5.25rem] sm:bottom-6 md:bottom-8 md:right-8"
       >
         <span className="font-heading text-lg leading-none">↑</span>
       </a>
-    </>
+    </>,
+    mountNode
   )
 }
 
