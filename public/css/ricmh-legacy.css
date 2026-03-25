@@ -311,7 +311,7 @@ body {
   color: #666666;
 }
 
-/* CONFERENCE VENUE — خلفية رمادية، إطار أزرق، hotel.png، صندوق داكن يسار */
+/* CONFERENCE VENUE — خلفية رمادية، hotel.png، صندوق داكن يسار */
 .conference-venue-section {
   background-color: #e8e8e8;
   padding-top: 3.5rem;
@@ -355,7 +355,8 @@ body {
 
 .conference-venue-frame {
   position: relative;
-  border: 3px solid #0078ff;
+  border: none;
+  outline: none;
   background-color: #1a1a1a;
   line-height: 0;
 }
