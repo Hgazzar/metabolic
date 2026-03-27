@@ -528,7 +528,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): عمود الصورة 240×347 — تدرج رمادي كالبطاقات الأصلية + صورة تملأ العمود */
+/* كاروسيل المتحدثين (#speakers-lineup): عمود الصورة 230×333 (نفس نسبة 240×347) — تدرج رمادي + صورة تملأ العمود */
 #speakers-lineup .speaker-slide__media {
   background: radial-gradient(109.63% 139.29% at 50.14% 22.2%, #b9b9b9 28.58%, #5d5d5d 100%);
 }
