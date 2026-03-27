@@ -377,14 +377,14 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 1.75rem;
 }
 
 @media (min-width: 768px) {
   .organizers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem;
+    gap: 1.25rem;
     margin-top: 2.25rem;
   }
 }
@@ -434,9 +434,15 @@ body {
   }
 }
 
+/* نفس عرض الصورة (300px) ومحاذاة واحدة: متمركز أفقياً، نص يسار داخل العمود */
 .organizer-card__body {
+  width: 300px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
   text-align: left;
-  padding: 1.25rem 0.25rem 0;
+  padding: 1.25rem 0 0;
 }
 
 .organizer-card__name {
@@ -669,12 +675,13 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 100% عرضاً وارتفاعاً، ملاصقة لأسفل */
+/* كاروسيل المتحدثين (#speakers-lineup): بدون border-radius داخل عمود الصورة؛ إزاحة 5px للأسفل */
 #speakers-lineup .speaker-slide__media {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   background: radial-gradient(109.63% 139.29% at 50.14% 22.2%, #b9b9b9 28.58%, #5d5d5d 100%);
+  border-radius: 0;
 }
 
 #speakers-lineup .speaker-slide__media img {
@@ -684,10 +691,12 @@ body {
   max-width: 100%;
   max-height: 100%;
   flex-shrink: 0;
+  border-radius: 0;
   background-color: transparent;
   background-image: none;
   object-fit: cover;
   object-position: bottom center;
+  transform: translateY(5px);
 }
 
 /* اسم المتحدث: سطر واحد، حجم يتناسب مع عرض النص */
