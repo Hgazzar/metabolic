@@ -384,7 +384,7 @@ body {
 @media (min-width: 768px) {
   .organizers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 200px;
+    gap: 100px;
     margin-top: 2.25rem;
   }
 }
