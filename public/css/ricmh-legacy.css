@@ -255,7 +255,7 @@ body {
   background-color: transparent;
 }
 
-/* صورة WebP: بدون ارتفاع ثابت يفرض قصاً دائرياً؛ التدرج على الـ wrapper فقط */
+/* صورة المتحدث (PNG): بدون ارتفاع ثابت يفرض قصاً دائرياً؛ التدرج على الـ wrapper فقط */
 .speaker-card .image-wrapper {
   height: auto;
   min-height: 220px;
@@ -275,10 +275,11 @@ body {
 .speaker-card__photo {
   display: block;
   margin: 0;
-  width: 220px;
+  width: 100%;
   max-width: 100%;
   height: auto;
   background-color: transparent;
+  background-image: none;
   object-fit: contain;
   object-position: left bottom;
   filter: none;
@@ -298,7 +299,7 @@ body {
   margin: 0 0 0.5rem;
   font-family: Poppins, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.125rem, 2.6vw, 1.8rem);
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
   line-height: 1.2;
   color: #111111;
   white-space: nowrap;
@@ -527,22 +528,35 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين: لا خلفية على الـ img (شفاف)؛ الجودة عبر عرض ثابت + ارتفاع تلقائي */
-#speakers-lineup .speaker-slide > .flex > img {
+/* كاروسيل المتحدثين (#speakers-lineup): PNG شفاف، بدون خلفية على الصورة؛ العرض 100% داخل الحاوية */
+#speakers-lineup .speaker-slide__media {
   background-color: transparent;
   background-image: none;
 }
 
+#speakers-lineup .speaker-slide__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  background-image: none;
+  object-fit: contain;
+  object-position: top center;
+}
+
 @media (min-width: 768px) {
-  #speakers-lineup .speaker-slide > .flex > img {
-    width: 220px;
-    min-width: 220px;
-    height: auto;
+  #speakers-lineup .speaker-slide__media img {
     max-height: 347px;
-    object-fit: contain;
-    object-position: top center;
-    align-self: center;
   }
+}
+
+/* عنوان المتحدث في الكاروسيل: سطر واحد، حجم أقصى ~1.5rem */
+#speakers-lineup .speaker-slide h3 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Reach us — خلفية الفوتر */
