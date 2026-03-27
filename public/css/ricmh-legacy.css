@@ -316,6 +316,134 @@ body {
   color: #666666;
 }
 
+/* ORGANIZERS — لجنة التنظيم: تدرج أخضر، قص مائل أسفل، صورة 85% ملاصقة للأسفل */
+.organizers-section {
+  background-color: #ffffff;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .organizers-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.organizers-section__inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .organizers-section__inner {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.organizers-section__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.organizers-section__title {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.organizers-section__rule {
+  flex: 1 1 auto;
+  height: 1px;
+  margin-left: 1.25rem;
+  min-width: 2rem;
+  background-color: #cccccc;
+}
+
+.organizers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .organizers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.organizer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.organizer-card__photo-surface {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 260px;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  background: linear-gradient(165deg, #e3f2d4 0%, #aed581 38%, #7cb342 72%, #689f38 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.organizer-card__photo {
+  display: block;
+  width: 85%;
+  height: 85%;
+  max-width: 85%;
+  max-height: 85%;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+.organizer-card__body {
+  text-align: left;
+  padding: 1.25rem 0.25rem 0;
+}
+
+.organizer-card__name {
+  margin: 0 0 0.5rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  line-height: 1.3;
+  color: #111111;
+}
+
+.organizer-card__bio {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #666666;
+}
+
 /* CONFERENCE VENUE — خلفية رمادية، hotel.png، صندوق داكن يسار */
 .conference-venue-section {
   background-color: #e8e8e8;
@@ -528,19 +656,25 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): عمود الصورة 230×333 (نفس نسبة 240×347) — تدرج رمادي + صورة تملأ العمود */
+/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 85% عرضاً، ملاصقة لأسفل المربع */
 #speakers-lineup .speaker-slide__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   background: radial-gradient(109.63% 139.29% at 50.14% 22.2%, #b9b9b9 28.58%, #5d5d5d 100%);
 }
 
 #speakers-lineup .speaker-slide__media img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 85%;
+  max-width: 85%;
+  max-height: 85%;
+  flex-shrink: 0;
   background-color: transparent;
   background-image: none;
   object-fit: cover;
-  object-position: top center;
+  object-position: bottom center;
 }
 
 /* اسم المتحدث: سطر واحد، حجم يتناسب مع عرض النص */
@@ -901,9 +1035,20 @@ body {
   }
 
   .scientific-committee-section,
-  .speakers-section {
+  .speakers-section,
+  .organizers-section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .organizer-card__photo-surface {
+    min-height: 240px;
+    max-height: 360px;
+  }
+
+  .organizer-card__bio {
+    font-size: 0.875rem;
+    line-height: 1.45;
   }
 
   .partners-page-inner {
