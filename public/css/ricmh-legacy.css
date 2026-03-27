@@ -377,13 +377,15 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin-top: 1.75rem;
 }
 
 @media (min-width: 768px) {
   .organizers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 2.5rem;
+    margin-top: 2.25rem;
   }
 }
 
@@ -396,7 +398,10 @@ body {
 
 .organizer-card__photo-surface {
   position: relative;
-  width: 100%;
+  width: 300px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   box-sizing: border-box;
   background: transparent;
@@ -404,14 +409,29 @@ body {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-/* أصول Saad/Abeer: 390×599 — عرض كامل للعمود، ارتفاع تلقائي دون قص */
+/* عرض ثابت 300×461 كما في التصميم */
 .organizer-card__photo {
   display: block;
-  width: 100%;
+  width: 300px;
   max-width: 100%;
-  height: auto;
+  height: 461px;
+  max-height: min(461px, 85vh);
+  margin: 0 auto;
   object-fit: contain;
   object-position: bottom center;
+}
+
+@media (max-width: 359px) {
+  .organizer-card__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 300 / 461;
+    max-height: none;
+  }
+
+  .organizer-card__photo-surface {
+    width: 100%;
+  }
 }
 
 .organizer-card__body {
@@ -649,7 +669,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 98%، ملاصقة لأسفل المربع */
+/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 100% عرضاً وارتفاعاً، ملاصقة لأسفل */
 #speakers-lineup .speaker-slide__media {
   display: flex;
   align-items: flex-end;
@@ -659,10 +679,10 @@ body {
 
 #speakers-lineup .speaker-slide__media img {
   display: block;
-  width: 98%;
-  height: 98%;
-  max-width: 98%;
-  max-height: 98%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   flex-shrink: 0;
   background-color: transparent;
   background-image: none;
