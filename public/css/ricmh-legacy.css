@@ -316,7 +316,7 @@ body {
   color: #666666;
 }
 
-/* ORGANIZERS — لجنة التنظيم: تدرج أخضر، قص مائل أسفل، صورة 95% ملاصقة للأسفل */
+/* ORGANIZERS — خلفية الشفاف (الصور PNG بها خضراء)، قص مائل أسفل، الصورة كاملة بعرض الحاوية */
 .organizers-section {
   background-color: #ffffff;
   padding-top: 4rem;
@@ -397,27 +397,20 @@ body {
 .organizer-card__photo-surface {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  min-height: 260px;
-  max-height: 400px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   box-sizing: border-box;
-  background: linear-gradient(165deg, #e3f2d4 0%, #aed581 38%, #7cb342 72%, #689f38 100%);
+  background: transparent;
   clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+/* أصول Saad/Abeer: 390×599 — عرض كامل للعمود، ارتفاع تلقائي دون قص */
 .organizer-card__photo {
   display: block;
-  width: 95%;
-  height: 95%;
-  max-width: 95%;
-  max-height: 95%;
-  flex-shrink: 0;
-  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   object-position: bottom center;
 }
 
@@ -656,7 +649,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 95%، ملاصقة لأسفل المربع */
+/* كاروسيل المتحدثين (#speakers-lineup): عمود 230×333؛ الصورة 98%، ملاصقة لأسفل المربع */
 #speakers-lineup .speaker-slide__media {
   display: flex;
   align-items: flex-end;
@@ -666,10 +659,10 @@ body {
 
 #speakers-lineup .speaker-slide__media img {
   display: block;
-  width: 95%;
-  height: 95%;
-  max-width: 95%;
-  max-height: 95%;
+  width: 98%;
+  height: 98%;
+  max-width: 98%;
+  max-height: 98%;
   flex-shrink: 0;
   background-color: transparent;
   background-image: none;
@@ -1039,11 +1032,6 @@ body {
   .organizers-section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-  }
-
-  .organizer-card__photo-surface {
-    min-height: 240px;
-    max-height: 360px;
   }
 
   .organizer-card__bio {
