@@ -528,32 +528,25 @@ body {
   backface-visibility: hidden;
 }
 
-/* كاروسيل المتحدثين (#speakers-lineup): PNG شفاف، بدون خلفية على الصورة؛ العرض 100% داخل الحاوية */
+/* كاروسيل المتحدثين (#speakers-lineup): عمود الصورة 240×347 — تدرج رمادي كالبطاقات الأصلية + صورة تملأ العمود */
 #speakers-lineup .speaker-slide__media {
-  background-color: transparent;
-  background-image: none;
+  background: radial-gradient(109.63% 139.29% at 50.14% 22.2%, #b9b9b9 28.58%, #5d5d5d 100%);
 }
 
 #speakers-lineup .speaker-slide__media img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: transparent;
   background-image: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: top center;
 }
 
-@media (min-width: 768px) {
-  #speakers-lineup .speaker-slide__media img {
-    max-height: 347px;
-  }
-}
-
-/* عنوان المتحدث في الكاروسيل: سطر واحد، حجم أقصى ~1.5rem */
+/* اسم المتحدث: سطر واحد، حجم يتناسب مع عرض النص */
 #speakers-lineup .speaker-slide h3 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  line-height: 1.2;
+  font-size: clamp(1.125rem, 2.6vw, 1.75rem);
+  line-height: 1.15;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
