@@ -297,9 +297,12 @@ body {
   margin: 0 0 0.5rem;
   font-family: Poppins, sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.35;
+  font-size: clamp(0.8125rem, 2.1vw, 1rem);
+  line-height: 1.25;
   color: #111111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .speaker-card__desc {
@@ -521,6 +524,11 @@ body {
 #speakers-track .speaker-slide {
   transform-origin: center center;
   backface-visibility: hidden;
+}
+
+/* نفس خلفية صور المتحدثين في committee: تدرج رمادي فاتح → غامق بدل ظهور أسود خلف الصورة */
+#speakers-lineup .speaker-slide > .flex > img {
+  background: radial-gradient(109.63% 139.29% at 50.14% 22.2%, #b9b9b9 28.58%, #5d5d5d 100%);
 }
 
 /* Reach us — خلفية الفوتر */
@@ -855,10 +863,6 @@ body {
 
   .speaker-card__body {
     padding: 1.25rem 1rem 2.75rem;
-  }
-
-  .speaker-card__name {
-    font-size: 1.0625rem;
   }
 
   .speaker-card__desc {
