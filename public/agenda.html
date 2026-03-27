@@ -122,15 +122,42 @@
     </div>
 
     <section
+      id="agenda-section"
       dir="ltr"
       lang="en"
-      class="scroll-reveal flex min-h-[50vh] w-full items-center justify-center bg-white py-20 md:py-28"
+      class="scroll-reveal w-full bg-white py-16"
     >
-      <p
-        class="text-center font-heading text-[clamp(2.25rem,8vw,4.5rem)] font-bold uppercase leading-tight tracking-[0.06em] text-black"
-      >
-        COMING SOON
-      </p>
+      <div class="mx-auto w-full max-w-7xl px-4 md:px-8">
+        <div class="mb-6 flex flex-wrap justify-start gap-2 sm:gap-4">
+          <button
+            type="button"
+            data-agenda-tab="day1"
+            aria-selected="true"
+            class="agenda-tab-btn rounded-lg px-4 py-2 text-sm font-semibold transition sm:px-6 sm:text-base bg-[rgb(122,200,68)] text-white shadow-sm"
+          >
+            Day 1 (3 April)
+          </button>
+          <button
+            type="button"
+            data-agenda-tab="day2"
+            aria-selected="false"
+            class="agenda-tab-btn rounded-lg px-4 py-2 text-sm font-semibold transition sm:px-6 sm:text-base bg-[#f3f4f6] text-[#4b5563]"
+          >
+            Day 2 (4 April)
+          </button>
+        </div>
+
+        <div class="w-full">
+          <img
+            id="agenda-image"
+            src="./assets/day1.jpg"
+            alt="Agenda Day 1"
+            class="w-full shadow-sm transition-opacity duration-300 ease-in-out opacity-100"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
     </section>
 
     <footer
@@ -300,6 +327,58 @@
       <span class="font-heading text-lg leading-none">↑</span>
     </a>
 
+    <script>
+      (() => {
+        const agendaImage = document.getElementById("agenda-image")
+        const tabButtons = Array.from(document.querySelectorAll(".agenda-tab-btn"))
+        if (!agendaImage || tabButtons.length === 0) return
+
+        const tabData = {
+          day1: { src: "./assets/day1.jpg", alt: "Agenda Day 1" },
+          day2: { src: "./assets/day2.jpg", alt: "Agenda Day 2" },
+        }
+
+        const activeBtnClass = "bg-[rgb(122,200,68)] text-white shadow-sm"
+        const inactiveBtnClass = "bg-[#f3f4f6] text-[#4b5563]"
+
+        const setActiveTab = (tabKey) => {
+          const nextData = tabData[tabKey]
+          if (!nextData) return
+
+          tabButtons.forEach((button) => {
+            const isActive = button.dataset.agendaTab === tabKey
+            button.setAttribute("aria-selected", String(isActive))
+            button.classList.toggle("bg-[rgb(122,200,68)]", isActive)
+            button.classList.toggle("text-white", isActive)
+            button.classList.toggle("shadow-sm", isActive)
+            button.classList.toggle("bg-[#f3f4f6]", !isActive)
+            button.classList.toggle("text-[#4b5563]", !isActive)
+          })
+
+          agendaImage.classList.remove("opacity-100")
+          agendaImage.classList.add("opacity-0")
+
+          window.setTimeout(() => {
+            agendaImage.src = nextData.src
+            agendaImage.alt = nextData.alt
+            window.requestAnimationFrame(() => {
+              agendaImage.classList.remove("opacity-0")
+              agendaImage.classList.add("opacity-100")
+            })
+          }, 120)
+        }
+
+        tabButtons.forEach((button) => {
+          button.classList.add(...activeBtnClass.split(" "))
+          button.classList.remove(...inactiveBtnClass.split(" "))
+          if (button.getAttribute("aria-selected") === "false") {
+            button.classList.remove(...activeBtnClass.split(" "))
+            button.classList.add(...inactiveBtnClass.split(" "))
+          }
+          button.addEventListener("click", () => setActiveTab(button.dataset.agendaTab))
+        })
+      })()
+    </script>
     <script src="./js/ricmh-legacy.js" defer></script>
   </body>
 </html>
