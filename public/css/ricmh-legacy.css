@@ -708,6 +708,64 @@ body {
   text-overflow: ellipsis;
 }
 
+/* جوال ضيق: غلاف = الأزرار؛ شريحة بعرض المسار؛ صورة فوق + نص تحت + ارتفاع تلقائي */
+@media (max-width: 767px) {
+  #speakers-lineup #speakers-track {
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  #speakers-lineup .speaker-slide {
+    flex: 0 0 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    height: auto !important;
+    min-height: 0;
+    border-radius: 0.75rem !important;
+  }
+
+  #speakers-lineup .speaker-slide > .flex {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  #speakers-lineup .speaker-slide__media {
+    width: 100% !important;
+    height: clamp(11rem, 52vw, 14rem);
+    flex-shrink: 0;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+  }
+
+  #speakers-lineup .speaker-slide__media img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transform: none;
+    max-height: none;
+  }
+
+  #speakers-lineup .speaker-slide .min-w-0.flex-1 {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  #speakers-lineup .speaker-slide h3 {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
 /* Reach us — خلفية الفوتر */
 #reach-us .reach-us-lines::after {
   content: "";
