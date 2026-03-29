@@ -19,7 +19,7 @@
   </head>
 
   <body class="min-h-screen bg-black text-white">
-    <div id="top" class="relative min-h-screen overflow-hidden bg-[#000000]">
+    <div id="top" class="relative overflow-hidden bg-[#000000]">
       <div
         aria-hidden="true"
         class="pointer-events-none absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
@@ -34,7 +34,7 @@
         >
           <div class="flex w-full items-center justify-between gap-3 lg:w-auto lg:max-w-none">
             <div class="flex min-w-0 items-center gap-2 sm:gap-3">
-              <a href="./ricmh-legacy-full.html" class="shrink-0" aria-label="RICMH — الصفحة الرئيسية">
+              <a href="./ricmh-legacy-full.html" class="shrink-0" target="_top" aria-label="RICMH — الصفحة الرئيسية">
                 <img
                   src="./assets/logo.png"
                   alt="RICMH Logo"
@@ -67,11 +67,11 @@
             class="flex hidden w-full flex-col gap-4 border-t border-neutral-100 pt-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:border-0 lg:pt-0"
           >
             <ul class="flex flex-col gap-3 font-heading text-[13px] font-medium text-[#2a2a2a] sm:text-[14px] lg:flex-row lg:items-center lg:gap-8">
-              <li><a href="./ricmh-legacy-full.html" class="block py-1 transition hover:opacity-70">Home</a></li>
-              <li><a href="./agenda.html" class="block py-1 text-[#7AC843]">Agenda</a></li>
-              <li><a href="./committee.html" class="block py-1 transition hover:opacity-70">Committee</a></li>
-              <li><a href="./committee.html#speakers" class="block py-1 transition hover:opacity-70">Speakers</a></li>
-              <li><a href="./partners.html" class="block py-1 transition hover:opacity-70">Partners</a></li>
+              <li><a href="./ricmh-legacy-full.html" class="block py-1 transition hover:opacity-70" target="_top">Home</a></li>
+              <li><a href="./agenda.html" class="block py-1 text-[#7AC843]" target="_top">Agenda</a></li>
+              <li><a href="./committee.html" class="block py-1 transition hover:opacity-70" target="_top">Committee</a></li>
+              <li><a href="./speakers.html" class="block py-1 transition hover:opacity-70" target="_top">Speakers</a></li>
+              <li><a href="./partners.html" class="block py-1 transition hover:opacity-70" target="_top">Partners</a></li>
             </ul>
             <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
               <a
@@ -91,34 +91,17 @@
         </nav>
       </header>
 
-      <main
-        class="relative z-20 mx-auto flex min-h-[calc(100vh-88px)] w-full max-w-7xl flex-col items-center justify-center px-4 pb-16 pt-10 text-center md:px-8"
+      <div
+        class="relative z-20 mx-auto flex h-[250px] w-full max-w-7xl items-center justify-center px-4 md:h-[300px] md:px-8"
+        dir="ltr"
+        lang="en"
       >
-        <div
-          class="glow-pulse pointer-events-none absolute left-1/2 top-[47%] z-10 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(122,200,67,0.52)_0%,rgba(122,200,67,0.36)_20%,rgba(122,200,67,0.2)_38%,rgba(122,200,67,0.08)_54%,rgba(122,200,67,0)_76%)]"
-        ></div>
-
-        <section class="scroll-reveal relative z-20 flex w-full max-w-[980px] flex-col items-center gap-6">
-          <h1 dir="ltr" class="fade-up mt-2 font-heading leading-none">
-            <span
-              class="inline-block font-heading text-[clamp(4rem,18vw,148.91px)] font-bold leading-none tracking-[0] text-[#7EC147]"
-              >RICMH</span><span
-              class="font-heading text-[clamp(4rem,18vw,148.91px)] font-medium leading-none tracking-[0] text-white"
-              >2026</span>
-          </h1>
-          <p
-            class="fade-up-delay-1 mt-0 inline-block max-w-[min(100%,839px)] font-heading text-[clamp(1.5rem,5vw,39.94px)] font-bold leading-tight tracking-[0] text-white md:leading-[100%]"
-          >
-            Shaping the Future of Metabolic wellness
-          </p>
-          <p dir="ltr" class="fade-up-delay-2 font-heading text-4xl font-normal text-white md:text-[42px]">
-            <span class="inline-block font-heading text-[43.23px] font-bold leading-[100%] tracking-[0] text-white md:h-[65px] md:w-[106px]"
-              >April</span>
-            <span class="inline-block font-heading text-[39px] font-normal leading-[100%] tracking-[0] text-white md:h-[59px] md:w-[197px]">
-              3–4, 2026</span>
-          </p>
-        </section>
-      </main>
+        <h1
+          class="scroll-reveal font-heading text-[clamp(2rem,6vw,2.75rem)] font-semibold uppercase tracking-[0.08em] text-white"
+        >
+          Agenda
+        </h1>
+      </div>
     </div>
 
     <section
@@ -308,16 +291,13 @@
     </footer>
 
     <a
-      href="#"
+      href="https://rekaz.io/blantastyk/merchandise/hjz-tthkrh"
       dir="ltr"
-      class="scroll-reveal fixed bottom-6 left-4 z-[100] flex items-center gap-2 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-md transition hover:opacity-90 md:bottom-8 md:left-8"
+      class="scroll-reveal fixed bottom-6 left-4 z-[100] flex items-center gap-1 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-md transition hover:opacity-90 md:bottom-8 md:left-8"
+      aria-label="Register now"
     >
-      <svg class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-        />
-      </svg>
-      <span>Contact Us</span>
+      <span>Register Now</span>
+      <span aria-hidden="true">→</span>
     </a>
     <a
       href="#top"

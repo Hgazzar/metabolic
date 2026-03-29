@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom"
 
 const navItems = [
-  { to: "/", label: "الرئيسية", end: true },
-  { to: "/program", label: "البرنامج" },
-  { to: "/speakers", label: "المتحدثون" },
-  { to: "/register", label: "التسجيل" },
-  { to: "/venue", label: "الموقع" },
-  { to: "/contact", label: "تواصل" },
+  { kind: "route", to: "/", label: "الرئيسية", end: true },
+  { kind: "route", to: "/program", label: "البرنامج" },
+  { kind: "speakers", label: "المتحدثون" },
+  { kind: "route", to: "/register", label: "التسجيل" },
+  { kind: "route", to: "/venue", label: "الموقع" },
+  { kind: "route", to: "/contact", label: "تواصل" },
 ]
 
 function Navbar() {
@@ -21,22 +21,33 @@ function Navbar() {
         </NavLink>
 
         <ul className="hidden flex-1 flex-wrap items-center justify-center gap-4 font-body text-sm text-white/85 lg:flex xl:gap-8">
-          {navItems.map((item) => (
-            <li key={item.to}>
-              <NavLink
-                to={item.to}
-                end={item.end}
-                className={({ isActive }) =>
-                  [
-                    "transition hover:text-white",
-                    isActive ? "font-semibold text-white" : "",
-                  ].join(" ")
-                }
-              >
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
+          {navItems.map((item) =>
+            item.kind === "speakers" ? (
+              <li key="speakers">
+                <a
+                  href={`${import.meta.env.BASE_URL}speakers.html`}
+                  className="transition hover:text-white"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ) : (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.end}
+                  className={({ isActive }) =>
+                    [
+                      "transition hover:text-white",
+                      isActive ? "font-semibold text-white" : "",
+                    ].join(" ")
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ),
+          )}
         </ul>
 
         <NavLink
