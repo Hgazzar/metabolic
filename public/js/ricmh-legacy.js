@@ -257,6 +257,19 @@
 
   initScrollReveal()
 
+  /** كسر كاش صور الـ assets بدون تغيير أسماء الملفات */
+  function bustLegacyAssetsCache() {
+    const VERSION = "20260330"
+    const imgs = document.querySelectorAll('img[src^="./assets/"], img[src^="/assets/"]')
+    imgs.forEach((img) => {
+      const raw = img.getAttribute("src")
+      if (!raw) return
+      if (raw.includes("?")) return
+      if (!/\.(png|jpe?g|webp|gif|svg)$/i.test(raw)) return
+      img.setAttribute("src", `${raw}?v=${VERSION}`)
+    })
+  }
+
   /** قائمة تنقل الجوال (همبرغر) */
   function initLegacyNav() {
     const drawer = document.getElementById("legacy-nav-drawer")
@@ -313,5 +326,6 @@
     })
   }
 
+  bustLegacyAssetsCache()
   initLegacyNav()
 })()
