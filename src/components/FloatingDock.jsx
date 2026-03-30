@@ -24,7 +24,7 @@ function FloatingDock() {
     <>
       <a
         ref={applyRegisterFixedStyles}
-        href="https://rekaz.io/blantastyk/merchandise/hjz-tthkrh"
+        href="https://rekaz.io/blantastyk/reservation/book-a-ticket"
         dir="ltr"
         className="items-center justify-center gap-1 rounded-full bg-[#7EC147] px-4 py-2.5 font-heading text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
         aria-label="Register now"
